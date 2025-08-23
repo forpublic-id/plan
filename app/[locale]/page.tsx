@@ -4,10 +4,11 @@ import { Features } from "@/components/sections/Features";
 import { Statistics } from "@/components/sections/Statistics";
 
 export default async function HomePage({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations("home");
 
   return (

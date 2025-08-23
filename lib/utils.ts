@@ -78,8 +78,10 @@ export function calculateZoneStatistics(features: any[]) {
   };
   
   features.forEach((feature) => {
-    const area = feature.properties.area || 0;
-    const category = feature.properties.zoneCategory;
+    const area = feature?.properties?.area || 0;
+    const category = feature?.properties?.zoneCategory;
+    
+    if (!category) return;
     
     stats.totalArea += area;
     
@@ -92,10 +94,12 @@ export function calculateZoneStatistics(features: any[]) {
   });
   
   // Calculate percentages
-  Object.keys(stats.categoryStats).forEach((category) => {
-    stats.categoryStats[category].percentage = 
-      (stats.categoryStats[category].area / stats.totalArea) * 100;
-  });
+  if (stats.totalArea > 0) {
+    Object.keys(stats.categoryStats).forEach((category) => {
+      stats.categoryStats[category].percentage = 
+        (stats.categoryStats[category].area / stats.totalArea) * 100;
+    });
+  }
   
   return stats;
 }

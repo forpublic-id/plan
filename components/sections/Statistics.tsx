@@ -82,7 +82,7 @@ export function Statistics() {
             {t("title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive data coverage across Indonesia's planning landscape, 
+            Comprehensive data coverage across Indonesia&apos;s planning landscape, 
             enabling transparent and informed development decisions.
           </p>
         </div>

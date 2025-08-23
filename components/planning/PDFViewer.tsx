@@ -102,12 +102,14 @@ export function PDFViewer({
   };
 
   const toggleFullscreen = () => {
-    if (!document.fullscreenElement) {
-      containerRef.current?.requestFullscreen();
-      setIsFullscreen(true);
-    } else {
-      document.exitFullscreen();
-      setIsFullscreen(false);
+    if (typeof window !== "undefined") {
+      if (!window.document.fullscreenElement) {
+        containerRef.current?.requestFullscreen();
+        setIsFullscreen(true);
+      } else {
+        window.document.exitFullscreen();
+        setIsFullscreen(false);
+      }
     }
   };
 

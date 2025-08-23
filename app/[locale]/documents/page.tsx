@@ -1,12 +1,13 @@
 import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
-import { DocumentsPage } from "@/components/pages/DocumentsPage";
+import type { Metadata } from "next";
+import { DocumentLibrary } from "@/components/planning";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "documents" });
 
   return {
@@ -16,9 +17,20 @@ export async function generateMetadata({
 }
 
 export default async function DocumentsRoute({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  return <DocumentsPage locale={locale} />;
+  const { locale } = await params;
+  const t = await getTranslations("documents");
+  
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2">{t("title")}</h1>
+        <p className="text-muted-foreground">{t("subtitle")}</p>
+      </div>
+      <DocumentLibrary documents={[]} locale={locale as "id" | "en"} />
+    </div>
+  );
 }

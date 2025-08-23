@@ -6,10 +6,11 @@ import { Footer } from "@/components/layout/Footer";
 const locales = ["id", "en"];
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
@@ -31,13 +32,14 @@ export async function generateMetadata({
   };
 }
 
-export default function LocaleLayout({
+export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   // Validate that the incoming `locale` parameter is valid
   if (!locales.includes(locale as any)) notFound();
 

@@ -1,12 +1,13 @@
 import { getTranslations } from "next-intl/server";
-import { Metadata } from "next";
-import { MapPage } from "@/components/pages/MapPage";
+import type { Metadata } from "next";
+import { InteractiveMap } from "@/components/planning";
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "maps" });
 
   return {
@@ -16,9 +17,20 @@ export async function generateMetadata({
 }
 
 export default async function MapsRoute({
-  params: { locale },
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
-  return <MapPage locale={locale} />;
+  const { locale } = await params;
+  const t = await getTranslations("maps");
+  
+  return (
+    <div className="container mx-auto px-4 py-8">
+      <div className="mb-8">
+        <h1 className="text-3xl font-bold mb-2">{t("title")}</h1>
+        <p className="text-muted-foreground">{t("subtitle")}</p>
+      </div>
+      <InteractiveMap height="600px" />
+    </div>
+  );
 }
