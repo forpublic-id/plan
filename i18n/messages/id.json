@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "Plan ForPublic.id - Transparansi Perencanaan Indonesia",
+    "description": "Platform komprehensif untuk transparansi perencanaan pembangunan Indonesia, peta zonasi, dan partisipasi publik dalam perencanaan tata ruang.",
+    "keywords": "perencanaan indonesia, tata ruang, peta zonasi, perencanaan pembangunan, transparansi, partisipasi publik, RTRW, RDTR"
+  },
+  "nav": {
+    "home": "Beranda",
+    "maps": "Peta Interaktif",
+    "documents": "Dokumen",
+    "regions": "Wilayah",
+    "projects": "Proyek",
+    "participate": "Partisipasi",
+    "about": "Tentang",
+    "glossary": "Glosarium",
+    "languageSwitcher": "Bahasa"
+  },
+  "home": {
+    "hero": {
+      "title": "Transparansi Perencanaan Indonesia",
+      "subtitle": "Akses komprehensif untuk rencana tata ruang, master plan pembangunan, dan peta zonasi interaktif di seluruh Indonesia",
+      "cta": {
+        "primary": "Jelajahi Peta",
+        "secondary": "Lihat Dokumen"
+      }
+    },
+    "features": {
+      "title": "Fitur Utama",
+      "subtitle": "Platform terpusat untuk perencanaan pembangunan transparan dan partisipasi publik",
+      "items": {
+        "interactiveMaps": {
+          "title": "Peta Perencanaan Interaktif",
+          "description": "Peta zonasi dengan kode warna penggunaan lahan, overlay master plan dengan fase pembangunan, dan visualisasi 3D ketinggian bangunan"
+        },
+        "documentLibrary": {
+          "title": "Perpustakaan Dokumen Perencanaan",
+          "description": "Repositori dokumen perencanaan yang dapat dicari, penampil PDF dengan zoom & anotasi, serta dukungan dokumen multibahasa"
+        },
+        "planningSearch": {
+          "title": "Pencarian Informasi Perencanaan",
+          "description": "Cari berdasarkan lokasi, jenis penggunaan lahan, atau kata kunci dengan filter lanjutan dan pencarian geografis"
+        },
+        "developmentAnalytics": {
+          "title": "Analitik Pembangunan",
+          "description": "Analisis distribusi penggunaan lahan, pemetaan kepadatan pembangunan, dan visualisasi dampak lingkungan"
+        },
+        "publicParticipation": {
+          "title": "Partisipasi Publik",
+          "description": "Platform konsultasi publik online, pengajuan komentar & masukan, serta jadwal dengar pendapat publik"
+        },
+        "developerTools": {
+          "title": "Tools untuk Developer",
+          "description": "Akses API data perencanaan, widget peta yang dapat disematkan, dan ekspor data GIS dalam berbagai format"
+        }
+      }
+    },
+    "statistics": {
+      "title": "Data Perencanaan Indonesia",
+      "items": {
+        "plans": {
+          "value": "500+",
+          "label": "Dokumen Perencanaan"
+        },
+        "regions": {
+          "value": "34",
+          "label": "Provinsi Tercakup"
+        },
+        "maps": {
+          "value": "150+",
+          "label": "Peta Zonasi Digital"
+        },
+        "projects": {
+          "value": "1,200+",
+          "label": "Proyek Pembangunan"
+        }
+      }
+    }
+  },
+  "maps": {
+    "title": "Peta Perencanaan Interaktif",
+    "subtitle": "Jelajahi peta zonasi dan master plan pembangunan di seluruh Indonesia",
+    "controls": {
+      "layers": "Layer",
+      "legend": "Legenda",
+      "search": "Pencarian",
+      "filters": "Filter",
+      "fullscreen": "Layar Penuh",
+      "download": "Unduh Data"
+    },
+    "zones": {
+      "residential": "Perumahan",
+      "commercial": "Perdagangan",
+      "industrial": "Industri",
+      "mixedUse": "Campuran",
+      "infrastructure": "Infrastruktur",
+      "openSpace": "Ruang Terbuka",
+      "special": "Khusus"
+    },
+    "info": {
+      "zone": "Zona",
+      "landUse": "Penggunaan Lahan",
+      "area": "Luas",
+      "far": "KLB",
+      "height": "Tinggi Maksimal",
+      "status": "Status",
+      "regulations": "Peraturan",
+      "setbacks": "Garis Sempadan",
+      "parking": "Parkir"
+    }
+  },
+  "documents": {
+    "title": "Perpustakaan Dokumen Perencanaan",
+    "subtitle": "Akses dan cari dokumen perencanaan, peraturan, dan peta dari seluruh Indonesia",
+    "search": {
+      "placeholder": "Cari dokumen, kata kunci, atau topik...",
+      "noResults": "Tidak ada dokumen yang ditemukan",
+      "results": "dokumen ditemukan"
+    },
+    "filters": {
+      "type": "Jenis Dokumen",
+      "category": "Kategori",
+      "region": "Wilayah",
+      "language": "Bahasa",
+      "dateRange": "Rentang Tanggal",
+      "clear": "Reset Filter"
+    },
+    "types": {
+      "regulation": "Peraturan",
+      "map": "Peta",
+      "report": "Laporan",
+      "study": "Kajian",
+      "guideline": "Panduan",
+      "presentation": "Presentasi"
+    },
+    "categories": {
+      "spatialPlan": "Tata Ruang",
+      "masterPlan": "Rencana Induk",
+      "environmental": "Lingkungan",
+      "transportation": "Transportasi",
+      "housing": "Perumahan",
+      "economic": "Ekonomi"
+    },
+    "actions": {
+      "view": "Lihat",
+      "download": "Unduh",
+      "share": "Bagikan",
+      "bookmark": "Tandai"
+    }
+  },
+  "regions": {
+    "title": "Jelajahi Perencanaan Regional",
+    "subtitle": "Pilih wilayah untuk melihat rencana tata ruang dan pembangunan regional",
+    "national": "Nasional",
+    "provincial": "Provinsi",
+    "cityRegency": "Kota/Kabupaten",
+    "district": "Kecamatan",
+    "selectRegion": "Pilih Wilayah",
+    "planningData": "Data Perencanaan",
+    "spatialPlans": "Rencana Tata Ruang",
+    "masterPlans": "Rencana Induk",
+    "developments": "Proyek Pembangunan"
+  },
+  "projects": {
+    "title": "Proyek Pembangunan",
+    "subtitle": "Pantau proyek pembangunan dan investasi di seluruh Indonesia",
+    "status": {
+      "proposed": "Diusulkan",
+      "approved": "Disetujui",
+      "underConstruction": "Dalam Konstruksi",
+      "completed": "Selesai",
+      "cancelled": "Dibatalkan"
+    },
+    "types": {
+      "housing": "Perumahan",
+      "commercial": "Komersial",
+      "office": "Perkantoran",
+      "industrial": "Industri",
+      "infrastructure": "Infrastruktur",
+      "mixedUse": "Campuran"
+    },
+    "info": {
+      "location": "Lokasi",
+      "developer": "Pengembang",
+      "investment": "Investasi",
+      "timeline": "Timeline",
+      "permits": "Izin",
+      "impact": "Dampak Lingkungan"
+    }
+  },
+  "participate": {
+    "title": "Partisipasi Publik",
+    "subtitle": "Berpartisipasi dalam proses perencanaan pembangunan dan berikan masukan Anda",
+    "consultation": {
+      "title": "Konsultasi Publik",
+      "active": "Sedang Berlangsung",
+      "upcoming": "Akan Datang",
+      "closed": "Selesai"
+    },
+    "feedback": {
+      "title": "Berikan Masukan",
+      "submit": "Kirim Masukan",
+      "guidelines": "Panduan Partisipasi"
+    },
+    "hearings": {
+      "title": "Dengar Pendapat",
+      "schedule": "Jadwal",
+      "materials": "Materi"
+    }
+  },
+  "about": {
+    "title": "Tentang Plan ForPublic.id",
+    "subtitle": "Platform transparansi perencanaan pembangunan Indonesia",
+    "mission": "Misi",
+    "vision": "Visi",
+    "objectives": "Tujuan",
+    "team": "Tim",
+    "partners": "Mitra",
+    "contact": "Kontak"
+  },
+  "glossary": {
+    "title": "Glosarium Perencanaan",
+    "subtitle": "Definisi dan penjelasan istilah perencanaan tata ruang dan pembangunan",
+    "search": "Cari istilah...",
+    "categories": {
+      "planning": "Perencanaan",
+      "zoning": "Zonasi",
+      "development": "Pembangunan",
+      "regulations": "Peraturan",
+      "infrastructure": "Infrastruktur"
+    }
+  },
+  "common": {
+    "loading": "Memuat...",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba Lagi",
+    "close": "Tutup",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "submit": "Kirim",
+    "edit": "Edit",
+    "delete": "Hapus",
+    "search": "Cari",
+    "filter": "Filter",
+    "sort": "Urutkan",
+    "export": "Ekspor",
+    "import": "Impor",
+    "print": "Cetak",
+    "share": "Bagikan",
+    "copy": "Salin",
+    "paste": "Tempel",
+    "select": "Pilih",
+    "selectAll": "Pilih Semua",
+    "deselectAll": "Batalkan Pilihan",
+    "next": "Selanjutnya",
+    "previous": "Sebelumnya",
+    "first": "Pertama",
+    "last": "Terakhir",
+    "page": "Halaman",
+    "of": "dari",
+    "showing": "Menampilkan",
+    "results": "hasil",
+    "noResults": "Tidak ada hasil",
+    "total": "Total",
+    "selected": "Dipilih",
+    "all": "Semua",
+    "none": "Tidak ada"
+  },
+  "footer": {
+    "description": "Platform transparansi perencanaan pembangunan Indonesia untuk meningkatkan partisipasi publik dalam perencanaan tata ruang.",
+    "links": {
+      "about": "Tentang",
+      "contact": "Kontak",
+      "privacy": "Privasi",
+      "terms": "Syarat Layanan",
+      "api": "API",
+      "developers": "Developer"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "email": "Email"
+    },
+    "copyright": "© 2024 ForPublic.id. Semua hak dilindungi."
+  }
+}

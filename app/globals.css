@@ -1,0 +1,117 @@
+@import 'tailwindcss';
+@import 'leaflet/dist/leaflet.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.577 0.245 27.325); /* ForPublic.id red */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: oklch(0.704 0.191 22.216); /* ForPublic.id red dark */
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.556 0 0);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Leaflet Map Overrides for ForPublic.id Theme */
+.leaflet-container {
+  @apply bg-muted;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+.leaflet-popup-content-wrapper {
+  @apply bg-card border border-border rounded-lg;
+}
+
+.leaflet-popup-content {
+  @apply text-foreground;
+}
+
+.leaflet-control-zoom a {
+  @apply bg-card border-border text-foreground hover:bg-accent;
+}
+
+.leaflet-control-attribution {
+  @apply bg-card/90 text-muted-foreground text-xs;
+}
+
+/* Planning Zone Colors */
+.zone-residential-low { @apply fill-green-200 stroke-green-400; }
+.zone-residential-medium { @apply fill-green-300 stroke-green-500; }
+.zone-residential-high { @apply fill-green-400 stroke-green-600; }
+.zone-commercial { @apply fill-blue-200 stroke-blue-400; }
+.zone-office { @apply fill-blue-300 stroke-blue-500; }
+.zone-industrial { @apply fill-yellow-200 stroke-yellow-400; }
+.zone-mixed-use { @apply fill-purple-200 stroke-purple-400; }
+.zone-open-space { @apply fill-emerald-200 stroke-emerald-400; }
+.zone-infrastructure { @apply fill-gray-200 stroke-gray-400; }
+.zone-special { @apply fill-orange-200 stroke-orange-400; }

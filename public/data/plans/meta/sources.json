@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "lastUpdated": "2024-12-15T00:00:00.000Z",
+    "version": "1.0.0",
+    "maintainer": "ForPublic.id",
+    "description": {
+      "id": "Sumber data perencanaan pembangunan dan tata ruang Indonesia",
+      "en": "Sources for Indonesian development planning and spatial planning data"
+    }
+  },
+  "governmentSources": {
+    "national": [
+      {
+        "id": "kemen-atr-bpn",
+        "name": {
+          "id": "Kementerian ATR/BPN",
+          "en": "Ministry of Agrarian Affairs and Spatial Planning"
+        },
+        "website": "https://www.atrbpn.go.id",
+        "dataTypes": ["RTRW", "RDTR", "spatial-regulations"],
+        "updateFrequency": "quarterly",
+        "description": {
+          "id": "Sumber utama data tata ruang nasional dan peraturan pertanahan",
+          "en": "Primary source for national spatial planning data and land regulations"
+        }
+      },
+      {
+        "id": "bappenas",
+        "name": {
+          "id": "Badan Perencanaan Pembangunan Nasional",
+          "en": "National Development Planning Agency"
+        },
+        "website": "https://www.bappenas.go.id",
+        "dataTypes": ["RPJPN", "RPJMN", "master-plans"],
+        "updateFrequency": "annual",
+        "description": {
+          "id": "Data perencanaan pembangunan nasional jangka panjang dan menengah",
+          "en": "Long-term and medium-term national development planning data"
+        }
+      }
+    ],
+    "regional": [
+      {
+        "id": "bappeda-dki",
+        "name": {
+          "id": "Bappeda DKI Jakarta",
+          "en": "Jakarta Regional Development Planning Agency"
+        },
+        "website": "https://bappeda.jakarta.go.id",
+        "region": "DKI Jakarta",
+        "dataTypes": ["RTRW", "RDTR", "master-plans", "development-projects"],
+        "updateFrequency": "monthly"
+      },
+      {
+        "id": "bappeda-jabar",
+        "name": {
+          "id": "Bappeda Jawa Barat",
+          "en": "West Java Regional Development Planning Agency"
+        },
+        "website": "https://bappeda.jabarprov.go.id",
+        "region": "Jawa Barat",
+        "dataTypes": ["RTRW", "RDTR", "master-plans"],
+        "updateFrequency": "quarterly"
+      }
+    ]
+  },
+  "legalFramework": {
+    "nationalLaws": [
+      {
+        "id": "uu-26-2007",
+        "title": {
+          "id": "UU No. 26 Tahun 2007 tentang Penataan Ruang",
+          "en": "Law No. 26/2007 on Spatial Planning"
+        },
+        "year": 2007,
+        "status": "active",
+        "description": {
+          "id": "Undang-undang dasar penataan ruang Indonesia",
+          "en": "Fundamental Indonesian spatial planning law"
+        }
+      },
+      {
+        "id": "pp-15-2010",
+        "title": {
+          "id": "PP No. 15 Tahun 2010 tentang Penyelenggaraan Penataan Ruang",
+          "en": "Government Regulation No. 15/2010 on Spatial Planning Implementation"
+        },
+        "year": 2010,
+        "status": "active"
+      }
+    ],
+    "planningHierarchy": {
+      "national": {
+        "RTRWN": {
+          "name": {
+            "id": "Rencana Tata Ruang Wilayah Nasional",
+            "en": "National Spatial Plan"
+          },
+          "scale": "1:1,000,000",
+          "period": "20 years",
+          "authority": "Government"
+        }
+      },
+      "provincial": {
+        "RTRWP": {
+          "name": {
+            "id": "Rencana Tata Ruang Wilayah Provinsi",
+            "en": "Provincial Spatial Plan"
+          },
+          "scale": "1:250,000",
+          "period": "20 years",
+          "authority": "Provincial Government"
+        }
+      },
+      "local": {
+        "RTRWK": {
+          "name": {
+            "id": "Rencana Tata Ruang Wilayah Kabupaten/Kota",
+            "en": "Regency/City Spatial Plan"
+          },
+          "scale": "1:25,000",
+          "period": "20 years",
+          "authority": "Local Government"
+        },
+        "RDTR": {
+          "name": {
+            "id": "Rencana Detail Tata Ruang",
+            "en": "Detailed Spatial Plan"
+          },
+          "scale": "1:5,000",
+          "period": "10 years",
+          "authority": "Local Government"
+        }
+      }
+    }
+  },
+  "dataQuality": {
+    "accuracy": {
+      "spatial": "±5 meters for RDTR, ±25 meters for RTRW",
+      "temporal": "Updated within 6 months of official publication",
+      "attribute": "Verified against official documents"
+    },
+    "completeness": {
+      "spatial": "90% coverage for major urban areas",
+      "temporal": "Data from 2020 onwards",
+      "attribute": "All mandatory fields populated"
+    },
+    "validation": {
+      "method": "Cross-referenced with multiple official sources",
+      "frequency": "Monthly verification",
+      "lastChecked": "2024-12-01"
+    }
+  },
+  "accessRights": {
+    "publicData": [
+      "General zoning information",
+      "Master plan summaries",
+      "Development project locations",
+      "Planning document metadata"
+    ],
+    "restrictedData": [
+      "Detailed technical specifications",
+      "Land ownership information",
+      "Sensitive infrastructure details"
+    ],
+    "license": {
+      "type": "Creative Commons Attribution 4.0 International",
+      "url": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "ForPublic.id - Indonesian Planning Transparency Platform"
+    }
+  },
+  "technicalSpecs": {
+    "coordinateSystem": "WGS84 (EPSG:4326)",
+    "formats": ["GeoJSON", "Shapefile", "KML", "PDF"],
+    "apiVersion": "1.0",
+    "encoding": "UTF-8"
+  },
+  "contacts": {
+    "platform": {
+      "name": "ForPublic.id",
+      "email": "hello@forpublic.id",
+      "website": "https://forpublic.id"
+    },
+    "dataIssues": {
+      "email": "data@forpublic.id",
+      "description": {
+        "id": "Laporkan masalah data atau permintaan perbaikan",
+        "en": "Report data issues or request corrections"
+      }
+    }
+  }
+}

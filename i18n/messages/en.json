@@ -1,0 +1,285 @@
+{
+  "meta": {
+    "title": "Plan ForPublic.id - Indonesian Planning Transparency",
+    "description": "Comprehensive platform for Indonesian development planning transparency, zoning maps, and public participation in spatial planning.",
+    "keywords": "indonesian planning, spatial planning, zoning maps, development planning, transparency, public participation, RTRW, RDTR"
+  },
+  "nav": {
+    "home": "Home",
+    "maps": "Interactive Maps",
+    "documents": "Documents",
+    "regions": "Regions",
+    "projects": "Projects",
+    "participate": "Participate",
+    "about": "About",
+    "glossary": "Glossary",
+    "languageSwitcher": "Language"
+  },
+  "home": {
+    "hero": {
+      "title": "Indonesian Planning Transparency",
+      "subtitle": "Comprehensive access to spatial plans, development master plans, and interactive zoning maps across Indonesia",
+      "cta": {
+        "primary": "Explore Maps",
+        "secondary": "View Documents"
+      }
+    },
+    "features": {
+      "title": "Key Features",
+      "subtitle": "Centralized platform for transparent development planning and public participation",
+      "items": {
+        "interactiveMaps": {
+          "title": "Interactive Planning Maps",
+          "description": "Color-coded zoning maps with land use classification, master plan overlays with development phases, and 3D building height restrictions visualization"
+        },
+        "documentLibrary": {
+          "title": "Planning Document Library",
+          "description": "Searchable repository of planning documents, PDF viewer with zoom & annotation capabilities, and multi-language document support"
+        },
+        "planningSearch": {
+          "title": "Planning Information Search",
+          "description": "Search by location, land use type, or keywords with advanced filtering and geographic search capabilities"
+        },
+        "developmentAnalytics": {
+          "title": "Development Analytics",
+          "description": "Land use distribution analysis, development density mapping, and environmental impact visualization"
+        },
+        "publicParticipation": {
+          "title": "Public Participation",
+          "description": "Online public consultation platform, comment & feedback submission, and public hearing schedules"
+        },
+        "developerTools": {
+          "title": "Developer Tools",
+          "description": "Planning data API access, embeddable map widgets, and GIS data export in multiple formats"
+        }
+      }
+    },
+    "statistics": {
+      "title": "Indonesian Planning Data",
+      "items": {
+        "plans": {
+          "value": "500+",
+          "label": "Planning Documents"
+        },
+        "regions": {
+          "value": "34",
+          "label": "Provinces Covered"
+        },
+        "maps": {
+          "value": "150+",
+          "label": "Digital Zoning Maps"
+        },
+        "projects": {
+          "value": "1,200+",
+          "label": "Development Projects"
+        }
+      }
+    }
+  },
+  "maps": {
+    "title": "Interactive Planning Maps",
+    "subtitle": "Explore zoning maps and development master plans across Indonesia",
+    "controls": {
+      "layers": "Layers",
+      "legend": "Legend",
+      "search": "Search",
+      "filters": "Filters",
+      "fullscreen": "Fullscreen",
+      "download": "Download Data"
+    },
+    "zones": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "industrial": "Industrial",
+      "mixedUse": "Mixed Use",
+      "infrastructure": "Infrastructure",
+      "openSpace": "Open Space",
+      "special": "Special"
+    },
+    "info": {
+      "zone": "Zone",
+      "landUse": "Land Use",
+      "area": "Area",
+      "far": "FAR",
+      "height": "Max Height",
+      "status": "Status",
+      "regulations": "Regulations",
+      "setbacks": "Setbacks",
+      "parking": "Parking"
+    }
+  },
+  "documents": {
+    "title": "Planning Document Library",
+    "subtitle": "Access and search planning documents, regulations, and maps from across Indonesia",
+    "search": {
+      "placeholder": "Search documents, keywords, or topics...",
+      "noResults": "No documents found",
+      "results": "documents found"
+    },
+    "filters": {
+      "type": "Document Type",
+      "category": "Category",
+      "region": "Region",
+      "language": "Language",
+      "dateRange": "Date Range",
+      "clear": "Clear Filters"
+    },
+    "types": {
+      "regulation": "Regulation",
+      "map": "Map",
+      "report": "Report",
+      "study": "Study",
+      "guideline": "Guideline",
+      "presentation": "Presentation"
+    },
+    "categories": {
+      "spatialPlan": "Spatial Plan",
+      "masterPlan": "Master Plan",
+      "environmental": "Environmental",
+      "transportation": "Transportation",
+      "housing": "Housing",
+      "economic": "Economic"
+    },
+    "actions": {
+      "view": "View",
+      "download": "Download",
+      "share": "Share",
+      "bookmark": "Bookmark"
+    }
+  },
+  "regions": {
+    "title": "Explore Regional Planning",
+    "subtitle": "Select a region to view spatial plans and regional development planning",
+    "national": "National",
+    "provincial": "Provincial",
+    "cityRegency": "City/Regency",
+    "district": "District",
+    "selectRegion": "Select Region",
+    "planningData": "Planning Data",
+    "spatialPlans": "Spatial Plans",
+    "masterPlans": "Master Plans",
+    "developments": "Development Projects"
+  },
+  "projects": {
+    "title": "Development Projects",
+    "subtitle": "Track development projects and investments across Indonesia",
+    "status": {
+      "proposed": "Proposed",
+      "approved": "Approved",
+      "underConstruction": "Under Construction",
+      "completed": "Completed",
+      "cancelled": "Cancelled"
+    },
+    "types": {
+      "housing": "Housing",
+      "commercial": "Commercial",
+      "office": "Office",
+      "industrial": "Industrial",
+      "infrastructure": "Infrastructure",
+      "mixedUse": "Mixed Use"
+    },
+    "info": {
+      "location": "Location",
+      "developer": "Developer",
+      "investment": "Investment",
+      "timeline": "Timeline",
+      "permits": "Permits",
+      "impact": "Environmental Impact"
+    }
+  },
+  "participate": {
+    "title": "Public Participation",
+    "subtitle": "Participate in development planning processes and provide your input",
+    "consultation": {
+      "title": "Public Consultation",
+      "active": "Active",
+      "upcoming": "Upcoming",
+      "closed": "Closed"
+    },
+    "feedback": {
+      "title": "Provide Feedback",
+      "submit": "Submit Feedback",
+      "guidelines": "Participation Guidelines"
+    },
+    "hearings": {
+      "title": "Public Hearings",
+      "schedule": "Schedule",
+      "materials": "Materials"
+    }
+  },
+  "about": {
+    "title": "About Plan ForPublic.id",
+    "subtitle": "Indonesian development planning transparency platform",
+    "mission": "Mission",
+    "vision": "Vision",
+    "objectives": "Objectives",
+    "team": "Team",
+    "partners": "Partners",
+    "contact": "Contact"
+  },
+  "glossary": {
+    "title": "Planning Glossary",
+    "subtitle": "Definitions and explanations of spatial planning and development terms",
+    "search": "Search terms...",
+    "categories": {
+      "planning": "Planning",
+      "zoning": "Zoning",
+      "development": "Development",
+      "regulations": "Regulations",
+      "infrastructure": "Infrastructure"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "retry": "Try Again",
+    "close": "Close",
+    "save": "Save",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "export": "Export",
+    "import": "Import",
+    "print": "Print",
+    "share": "Share",
+    "copy": "Copy",
+    "paste": "Paste",
+    "select": "Select",
+    "selectAll": "Select All",
+    "deselectAll": "Deselect All",
+    "next": "Next",
+    "previous": "Previous",
+    "first": "First",
+    "last": "Last",
+    "page": "Page",
+    "of": "of",
+    "showing": "Showing",
+    "results": "results",
+    "noResults": "No results",
+    "total": "Total",
+    "selected": "Selected",
+    "all": "All",
+    "none": "None"
+  },
+  "footer": {
+    "description": "Indonesian development planning transparency platform to enhance public participation in spatial planning.",
+    "links": {
+      "about": "About",
+      "contact": "Contact",
+      "privacy": "Privacy",
+      "terms": "Terms of Service",
+      "api": "API",
+      "developers": "Developers"
+    },
+    "social": {
+      "twitter": "Twitter",
+      "github": "GitHub",
+      "email": "Email"
+    },
+    "copyright": "© 2024 ForPublic.id. All rights reserved."
+  }
+}

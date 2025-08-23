@@ -1,0 +1,244 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "id": "jakarta-zoning-2024",
+    "region": "DKI Jakarta",
+    "planType": "RDTR",
+    "validPeriod": {
+      "start": "2020-01-01",
+      "end": "2030-12-31"
+    },
+    "lastUpdated": "2024-11-15T00:00:00.000Z",
+    "source": "Pemprov DKI Jakarta",
+    "status": "Approved",
+    "legalBasis": "Perda DKI Jakarta No. 1 Tahun 2022",
+    "version": "1.2",
+    "area": {
+      "province": "DKI Jakarta",
+      "city": "Jakarta Pusat"
+    },
+    "description": {
+      "id": "Peta zonasi detail Jakarta Pusat",
+      "en": "Central Jakarta detailed zoning map"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zone-001",
+        "zone": "K2",
+        "landUse": "Perdagangan dan Jasa",
+        "zoneCategory": "commercial",
+        "regulations": {
+          "far": 4.0,
+          "coverage": 85,
+          "height": {
+            "max": 120,
+            "floors": 30
+          },
+          "setback": {
+            "front": 5,
+            "side": 3,
+            "back": 5
+          },
+          "parkingRatio": 2.0
+        },
+        "area": 12.5,
+        "ownership": "mixed",
+        "developmentStatus": "developed",
+        "permitRequired": true,
+        "planningNotes": {
+          "id": "Zona perdagangan utama dengan akses transportasi umum",
+          "en": "Main commercial zone with public transportation access"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.8227, -6.1750],
+            [106.8280, -6.1750],
+            [106.8280, -6.1800],
+            [106.8227, -6.1800],
+            [106.8227, -6.1750]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zone-002",
+        "zone": "R2",
+        "landUse": "Perumahan Kepadatan Sedang",
+        "zoneCategory": "residential",
+        "regulations": {
+          "far": 2.0,
+          "coverage": 70,
+          "height": {
+            "max": 16,
+            "floors": 4
+          },
+          "setback": {
+            "front": 5,
+            "side": 2,
+            "back": 3
+          },
+          "parkingRatio": 1.0
+        },
+        "area": 25.8,
+        "ownership": "private",
+        "developmentStatus": "developed",
+        "permitRequired": true,
+        "planningNotes": {
+          "id": "Zona perumahan dengan fasilitas pendukung lengkap",
+          "en": "Residential zone with complete supporting facilities"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.8280, -6.1750],
+            [106.8350, -6.1750],
+            [106.8350, -6.1820],
+            [106.8280, -6.1820],
+            [106.8280, -6.1750]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zone-003",
+        "zone": "RTH",
+        "landUse": "Taman Kota",
+        "zoneCategory": "open-space",
+        "regulations": {
+          "far": 0.1,
+          "coverage": 5,
+          "height": {
+            "max": 8,
+            "floors": 2
+          },
+          "setback": {
+            "front": 20,
+            "side": 10,
+            "back": 20
+          },
+          "parkingRatio": 0.5
+        },
+        "area": 8.2,
+        "ownership": "public",
+        "developmentStatus": "developed",
+        "restrictions": ["no-development", "conservation"],
+        "permitRequired": false,
+        "planningNotes": {
+          "id": "Ruang terbuka hijau untuk rekreasi dan konservasi lingkungan",
+          "en": "Green open space for recreation and environmental conservation"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.8200, -6.1800],
+            [106.8250, -6.1800],
+            [106.8250, -6.1850],
+            [106.8200, -6.1850],
+            [106.8200, -6.1800]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zone-004",
+        "zone": "SPU",
+        "landUse": "Fasilitas Pendidikan",
+        "zoneCategory": "infrastructure",
+        "regulations": {
+          "far": 1.5,
+          "coverage": 50,
+          "height": {
+            "max": 20,
+            "floors": 5
+          },
+          "setback": {
+            "front": 10,
+            "side": 5,
+            "back": 10
+          },
+          "parkingRatio": 1.0
+        },
+        "area": 6.5,
+        "ownership": "public",
+        "developmentStatus": "developed",
+        "restrictions": ["public-use-only"],
+        "permitRequired": true,
+        "planningNotes": {
+          "id": "Kawasan khusus untuk fasilitas pendidikan dan pelatihan",
+          "en": "Special area for educational and training facilities"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.8350, -6.1820],
+            [106.8400, -6.1820],
+            [106.8400, -6.1870],
+            [106.8350, -6.1870],
+            [106.8350, -6.1820]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "zone-005",
+        "zone": "R3",
+        "landUse": "Apartemen dan Kondominium",
+        "zoneCategory": "residential",
+        "regulations": {
+          "far": 3.0,
+          "coverage": 75,
+          "height": {
+            "max": 60,
+            "floors": 15
+          },
+          "setback": {
+            "front": 6,
+            "side": 3,
+            "back": 4
+          },
+          "parkingRatio": 1.2
+        },
+        "area": 18.3,
+        "ownership": "private",
+        "developmentStatus": "under-development",
+        "permitRequired": true,
+        "planningNotes": {
+          "id": "Zona hunian vertikal dengan densitas tinggi",
+          "en": "High-density vertical residential zone"
+        }
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [106.8250, -6.1850],
+            [106.8320, -6.1850],
+            [106.8320, -6.1920],
+            [106.8250, -6.1920],
+            [106.8250, -6.1850]
+          ]
+        ]
+      }
+    }
+  ]
+}

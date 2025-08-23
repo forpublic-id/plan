@@ -1,0 +1,174 @@
+[
+  {
+    "id": "doc-001",
+    "title": {
+      "id": "Rencana Tata Ruang Wilayah DKI Jakarta 2030",
+      "en": "Jakarta Provincial Spatial Plan 2030"
+    },
+    "type": "regulation",
+    "category": "spatial-plan",
+    "language": "both",
+    "format": "pdf",
+    "fileSize": 15728640,
+    "pages": 156,
+    "metadata": {
+      "planType": "RTRW",
+      "region": "DKI Jakarta",
+      "author": "Pemprov DKI Jakarta",
+      "publishDate": "2022-03-15",
+      "legalBasis": "Perda DKI Jakarta No. 1 Tahun 2012",
+      "keywords": ["tata ruang", "jakarta", "zonasi", "pembangunan", "spatial planning"]
+    },
+    "files": [
+      {
+        "type": "primary",
+        "url": "/data/plans/documents/pdfs/rtrw-dki-jakarta-2030.pdf",
+        "filename": "RTRW_DKI_Jakarta_2030.pdf",
+        "description": {
+          "id": "Dokumen utama RTRW DKI Jakarta",
+          "en": "Main Jakarta spatial plan document"
+        }
+      }
+    ],
+    "summary": {
+      "id": "Rencana Tata Ruang Wilayah Provinsi DKI Jakarta tahun 2010-2030 yang mengatur pemanfaatan ruang untuk pembangunan yang berkelanjutan.",
+      "en": "Jakarta Provincial Spatial Plan 2010-2030 regulating land use for sustainable development."
+    },
+    "access": "public"
+  },
+  {
+    "id": "doc-002",
+    "title": {
+      "id": "Master Plan Transportasi Jakarta 2030",
+      "en": "Jakarta Transportation Master Plan 2030"
+    },
+    "type": "report",
+    "category": "transportation",
+    "language": "id",
+    "format": "pdf",
+    "fileSize": 8912345,
+    "pages": 89,
+    "metadata": {
+      "region": "DKI Jakarta",
+      "author": "Dinas Perhubungan DKI Jakarta",
+      "publishDate": "2023-07-20",
+      "keywords": ["transportasi", "jakarta", "masterplan", "mobilitas", "transportation"]
+    },
+    "files": [
+      {
+        "type": "primary",
+        "url": "/data/plans/documents/pdfs/masterplan-transportasi-jakarta-2030.pdf",
+        "filename": "Masterplan_Transportasi_Jakarta_2030.pdf"
+      }
+    ],
+    "summary": {
+      "id": "Rencana induk sistem transportasi Jakarta yang mengintegrasikan berbagai moda transportasi untuk mobilitas yang efisien.",
+      "en": "Jakarta transportation master plan integrating various transportation modes for efficient mobility."
+    },
+    "access": "public"
+  },
+  {
+    "id": "doc-003",
+    "title": {
+      "id": "Peta Zonasi Kota Bandung",
+      "en": "Bandung City Zoning Map"
+    },
+    "type": "map",
+    "category": "spatial-plan",
+    "language": "both",
+    "format": "pdf",
+    "fileSize": 25600000,
+    "pages": 45,
+    "metadata": {
+      "planType": "RDTR",
+      "region": "Kota Bandung",
+      "author": "Pemkot Bandung",
+      "publishDate": "2023-11-10",
+      "keywords": ["zonasi", "bandung", "peta", "tata ruang", "zoning"]
+    },
+    "files": [
+      {
+        "type": "primary",
+        "url": "/data/plans/documents/maps/peta-zonasi-bandung.pdf",
+        "filename": "Peta_Zonasi_Bandung.pdf"
+      }
+    ],
+    "summary": {
+      "id": "Peta detail zonasi Kota Bandung menunjukkan pembagian zona penggunaan lahan dan peruntukan kawasan.",
+      "en": "Detailed zoning map of Bandung City showing land use zones and area designations."
+    },
+    "access": "public"
+  },
+  {
+    "id": "doc-004",
+    "title": {
+      "id": "Kajian Lingkungan Hidup Strategis RTRW Jawa Barat",
+      "en": "Strategic Environmental Assessment West Java Spatial Plan"
+    },
+    "type": "study",
+    "category": "environmental",
+    "language": "id",
+    "format": "pdf",
+    "fileSize": 12845092,
+    "pages": 234,
+    "metadata": {
+      "planType": "RTRW",
+      "region": "Jawa Barat",
+      "author": "DLHK Jawa Barat",
+      "publishDate": "2023-05-15",
+      "keywords": ["lingkungan", "klhs", "jawa barat", "strategis", "environmental"]
+    },
+    "files": [
+      {
+        "type": "primary",
+        "url": "/data/plans/documents/reports/klhs-rtrw-jabar.pdf",
+        "filename": "KLHS_RTRW_Jawa_Barat.pdf"
+      }
+    ],
+    "summary": {
+      "id": "Kajian dampak lingkungan dari implementasi RTRW Provinsi Jawa Barat terhadap daya dukung dan daya tampung lingkungan.",
+      "en": "Environmental impact assessment of West Java Provincial Spatial Plan implementation on environmental carrying capacity."
+    },
+    "access": "public"
+  },
+  {
+    "id": "doc-005",
+    "title": {
+      "id": "Panduan Perizinan Pembangunan",
+      "en": "Development Permit Guidelines"
+    },
+    "type": "guideline",
+    "category": "housing",
+    "language": "both",
+    "format": "pdf",
+    "fileSize": 5234567,
+    "pages": 67,
+    "metadata": {
+      "region": "Nasional",
+      "author": "Kementerian ATR/BPN",
+      "publishDate": "2024-01-20",
+      "keywords": ["perizinan", "pembangunan", "panduan", "permits", "development"]
+    },
+    "files": [
+      {
+        "type": "primary",
+        "url": "/data/plans/documents/pdfs/panduan-perizinan-pembangunan.pdf",
+        "filename": "Panduan_Perizinan_Pembangunan.pdf"
+      },
+      {
+        "type": "translation",
+        "url": "/data/plans/documents/pdfs/development-permit-guidelines.pdf",
+        "filename": "Development_Permit_Guidelines.pdf",
+        "description": {
+          "id": "Versi bahasa Inggris",
+          "en": "English version"
+        }
+      }
+    ],
+    "summary": {
+      "id": "Panduan lengkap untuk memperoleh izin pembangunan sesuai dengan ketentuan tata ruang yang berlaku.",
+      "en": "Complete guide for obtaining development permits in accordance with applicable spatial planning regulations."
+    },
+    "access": "public"
+  }
+]

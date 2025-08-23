@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "id": "rtrw-dki-jakarta-2030",
+    "region": "DKI Jakarta",
+    "planType": "RTRW",
+    "validPeriod": {
+      "start": "2010-01-01",
+      "end": "2030-12-31"
+    },
+    "lastUpdated": "2024-11-15T00:00:00.000Z",
+    "source": "Pemprov DKI Jakarta",
+    "status": "Approved",
+    "legalBasis": "Perda DKI Jakarta No. 1 Tahun 2012",
+    "version": "2.1",
+    "area": {
+      "province": "DKI Jakarta"
+    },
+    "description": {
+      "id": "Rencana Tata Ruang Wilayah Provinsi DKI Jakarta 2030",
+      "en": "Jakarta Provincial Spatial Plan 2030"
+    }
+  },
+  "zones": [
+    {
+      "code": "R1",
+      "name": {
+        "id": "Perumahan Kepadatan Rendah",
+        "en": "Low Density Residential"
+      },
+      "color": "#90EE90",
+      "category": "residential",
+      "density": "low",
+      "description": {
+        "id": "Zona perumahan dengan kepadatan rendah, maksimal 100 unit per hektar",
+        "en": "Low density residential zone, maximum 100 units per hectare"
+      }
+    },
+    {
+      "code": "R2",
+      "name": {
+        "id": "Perumahan Kepadatan Sedang",
+        "en": "Medium Density Residential"
+      },
+      "color": "#7FDD7F",
+      "category": "residential",
+      "density": "medium",
+      "description": {
+        "id": "Zona perumahan dengan kepadatan sedang, 100-200 unit per hektar",
+        "en": "Medium density residential zone, 100-200 units per hectare"
+      }
+    },
+    {
+      "code": "R3",
+      "name": {
+        "id": "Perumahan Kepadatan Tinggi",
+        "en": "High Density Residential"
+      },
+      "color": "#6FCC6F",
+      "category": "residential",
+      "density": "high",
+      "description": {
+        "id": "Zona perumahan dengan kepadatan tinggi, lebih dari 200 unit per hektar",
+        "en": "High density residential zone, more than 200 units per hectare"
+      }
+    },
+    {
+      "code": "K1",
+      "name": {
+        "id": "Perdagangan dan Jasa Skala Lokal",
+        "en": "Local Commercial and Services"
+      },
+      "color": "#87CEEB",
+      "category": "commercial",
+      "description": {
+        "id": "Zona perdagangan dan jasa skala lingkungan dan kecamatan",
+        "en": "Local neighborhood and sub-district commercial and services zone"
+      }
+    },
+    {
+      "code": "K2",
+      "name": {
+        "id": "Perdagangan dan Jasa Skala Kota",
+        "en": "City-Scale Commercial and Services"
+      },
+      "color": "#4682B4",
+      "category": "commercial",
+      "description": {
+        "id": "Zona perdagangan dan jasa skala kota dan regional",
+        "en": "City and regional scale commercial and services zone"
+      }
+    },
+    {
+      "code": "SPU",
+      "name": {
+        "id": "Sarana Pelayanan Umum",
+        "en": "Public Service Facilities"
+      },
+      "color": "#FFB6C1",
+      "category": "infrastructure",
+      "description": {
+        "id": "Zona untuk fasilitas pelayanan umum seperti sekolah, rumah sakit, perkantoran pemerintah",
+        "en": "Zone for public service facilities such as schools, hospitals, government offices"
+      }
+    },
+    {
+      "code": "RTH",
+      "name": {
+        "id": "Ruang Terbuka Hijau",
+        "en": "Green Open Space"
+      },
+      "color": "#32CD32",
+      "category": "open-space",
+      "description": {
+        "id": "Zona untuk taman, hutan kota, jalur hijau, dan ruang terbuka hijau lainnya",
+        "en": "Zone for parks, urban forests, green corridors, and other green open spaces"
+      }
+    }
+  ],
+  "regulations": {
+    "R1": {
+      "far": 1.2,
+      "coverage": 60,
+      "height": {
+        "max": 12,
+        "floors": 3
+      },
+      "setback": {
+        "front": 5,
+        "side": 3,
+        "back": 4
+      },
+      "parkingRatio": 1.0
+    },
+    "R2": {
+      "far": 2.0,
+      "coverage": 70,
+      "height": {
+        "max": 16,
+        "floors": 4
+      },
+      "setback": {
+        "front": 5,
+        "side": 2,
+        "back": 3
+      },
+      "parkingRatio": 1.0
+    },
+    "R3": {
+      "far": 3.0,
+      "coverage": 75,
+      "height": {
+        "max": 60,
+        "floors": 15
+      },
+      "setback": {
+        "front": 6,
+        "side": 3,
+        "back": 4
+      },
+      "parkingRatio": 1.2
+    },
+    "K1": {
+      "far": 2.5,
+      "coverage": 80,
+      "height": {
+        "max": 24,
+        "floors": 6
+      },
+      "setback": {
+        "front": 3,
+        "side": 2,
+        "back": 3
+      },
+      "parkingRatio": 1.5
+    },
+    "K2": {
+      "far": 4.0,
+      "coverage": 85,
+      "height": {
+        "max": 120,
+        "floors": 30
+      },
+      "setback": {
+        "front": 5,
+        "side": 3,
+        "back": 5
+      },
+      "parkingRatio": 2.0
+    },
+    "SPU": {
+      "far": 1.5,
+      "coverage": 50,
+      "height": {
+        "max": 20,
+        "floors": 5
+      },
+      "setback": {
+        "front": 10,
+        "side": 5,
+        "back": 10
+      },
+      "parkingRatio": 1.0
+    },
+    "RTH": {
+      "far": 0.1,
+      "coverage": 5,
+      "height": {
+        "max": 8,
+        "floors": 2
+      },
+      "setback": {
+        "front": 20,
+        "side": 10,
+        "back": 20
+      },
+      "parkingRatio": 0.5
+    }
+  },
+  "infrastructure": {
+    "roads": [
+      {
+        "id": "jalan-tol-dalam-kota",
+        "type": "highway",
+        "name": {
+          "id": "Jalan Tol Dalam Kota",
+          "en": "Inner City Toll Road"
+        },
+        "status": "existing",
+        "priority": "high"
+      },
+      {
+        "id": "jalan-arteri-primer",
+        "type": "arterial",
+        "name": {
+          "id": "Jalan Arteri Primer",
+          "en": "Primary Arterial Roads"
+        },
+        "status": "existing",
+        "priority": "high"
+      }
+    ],
+    "utilities": [
+      {
+        "id": "jaringan-air-bersih",
+        "type": "water",
+        "name": {
+          "id": "Jaringan Air Bersih",
+          "en": "Clean Water Network"
+        },
+        "status": "planned",
+        "priority": "high",
+        "timeline": {
+          "start": "2025-01-01",
+          "completion": "2028-12-31"
+        }
+      }
+    ],
+    "publicFacilities": [
+      {
+        "id": "rumah-sakit-umum",
+        "type": "hospital",
+        "name": {
+          "id": "Rumah Sakit Umum",
+          "en": "General Hospitals"
+        },
+        "status": "existing",
+        "priority": "high"
+      }
+    ]
+  },
+  "statistics": {
+    "totalArea": 66400, 
+    "landUseDistribution": {
+      "residential": {
+        "area": 26560,
+        "percentage": 40.0
+      },
+      "commercial": {
+        "area": 6640,
+        "percentage": 10.0
+      },
+      "industrial": {
+        "area": 3320,
+        "percentage": 5.0
+      },
+      "infrastructure": {
+        "area": 16600,
+        "percentage": 25.0
+      },
+      "open-space": {
+        "area": 13280,
+        "percentage": 20.0
+      }
+    },
+    "population": {
+      "current": 10700000,
+      "projected2030": 11500000,
+      "density": 161.1
+    }
+  }
+}
