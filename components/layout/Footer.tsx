@@ -9,7 +9,7 @@ import { Github, Twitter, Mail, ExternalLink } from "lucide-react";
 export function Footer() {
   const t = useTranslations("footer");
   const pathname = usePathname();
-  
+
   // Extract current locale from pathname
   const currentLocale = pathname.startsWith("/en") ? "en" : "id";
 
@@ -73,11 +73,13 @@ export function Footer() {
             <p className="text-muted-foreground text-sm leading-6 max-w-md">
               {t("description")}
             </p>
-            
+
             {/* ForPublic.id Ecosystem */}
             <div className="mt-6">
               <p className="text-sm font-medium mb-3">
-                {currentLocale === "id" ? "Ecosystem ForPublic.id" : "ForPublic.id Ecosystem"}
+                {currentLocale === "id"
+                  ? "Ecosystem ForPublic.id"
+                  : "ForPublic.id Ecosystem"}
               </p>
               <div className="flex flex-wrap gap-2">
                 <Link
@@ -155,9 +157,7 @@ export function Footer() {
         <div className="mt-12 border-t border-border pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
             {/* Copyright */}
-            <p className="text-sm text-muted-foreground">
-              {t("copyright")}
-            </p>
+            <p className="text-sm text-muted-foreground">{t("copyright")}</p>
 
             {/* Social Links */}
             <div className="flex space-x-4">
@@ -182,8 +182,8 @@ export function Footer() {
           {/* Attribution */}
           <div className="mt-4 pt-4 border-t border-border">
             <p className="text-xs text-muted-foreground text-center">
-              {currentLocale === "id" 
-                ? "Dibuat dengan ❤️ untuk transparansi publik Indonesia" 
+              {currentLocale === "id"
+                ? "Dibuat dengan ❤️ untuk transparansi publik Indonesia"
                 : "Built with ❤️ for Indonesian public transparency"}
             </p>
           </div>

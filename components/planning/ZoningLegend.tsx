@@ -5,12 +5,21 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
 import { ZoneClassification } from "@/lib/types/planning";
-import { formatArea, formatFAR, formatHeight, formatCoverage, cn } from "@/lib/utils";
+import {
+  formatArea,
+  formatFAR,
+  formatHeight,
+  formatCoverage,
+  cn,
+} from "@/lib/utils";
 import { ChevronDown, ChevronUp, Info } from "lucide-react";
 
 export interface ZoningLegendProps {
   zones: ZoneClassification[];
-  statistics?: Record<string, { area: number; percentage: number; count: number }>;
+  statistics?: Record<
+    string,
+    { area: number; percentage: number; count: number }
+  >;
   onZoneClick?: (zoneCode: string) => void;
   selectedZones?: string[];
   locale?: "id" | "en";
@@ -40,14 +49,17 @@ export function ZoningLegend({
     setExpandedZones(newExpanded);
   };
 
-  const groupedZones = zones.reduce((acc, zone) => {
-    const category = zone.category;
-    if (!acc[category]) {
-      acc[category] = [];
-    }
-    acc[category].push(zone);
-    return acc;
-  }, {} as Record<string, ZoneClassification[]>);
+  const groupedZones = zones.reduce(
+    (acc, zone) => {
+      const category = zone.category;
+      if (!acc[category]) {
+        acc[category] = [];
+      }
+      acc[category].push(zone);
+      return acc;
+    },
+    {} as Record<string, ZoneClassification[]>,
+  );
 
   const categoryLabels = {
     residential: { id: "Perumahan", en: "Residential" },
@@ -84,13 +96,20 @@ export function ZoningLegend({
         {statistics && showStatistics && (
           <div className="border rounded-md p-3 bg-muted/30">
             <div className="text-xs font-medium mb-2">
-              {locale === "id" ? "Statistik Penggunaan Lahan" : "Land Use Statistics"}
+              {locale === "id"
+                ? "Statistik Penggunaan Lahan"
+                : "Land Use Statistics"}
             </div>
             <div className="space-y-2">
               {Object.entries(statistics).map(([category, stats]) => (
-                <div key={category} className="flex justify-between items-center text-xs">
+                <div
+                  key={category}
+                  className="flex justify-between items-center text-xs"
+                >
                   <span className="capitalize">
-                    {categoryLabels[category as keyof typeof categoryLabels]?.[locale] || category}
+                    {categoryLabels[category as keyof typeof categoryLabels]?.[
+                      locale
+                    ] || category}
                   </span>
                   <div className="flex gap-2 text-muted-foreground">
                     <span>{formatArea(stats.area)}</span>
@@ -106,7 +125,9 @@ export function ZoningLegend({
         {Object.entries(groupedZones).map(([category, categoryZones]) => (
           <div key={category} className="space-y-2">
             <div className="text-sm font-medium text-muted-foreground border-b pb-1">
-              {categoryLabels[category as keyof typeof categoryLabels]?.[locale] || category}
+              {categoryLabels[category as keyof typeof categoryLabels]?.[
+                locale
+              ] || category}
             </div>
 
             {categoryZones.map((zone) => {
@@ -122,7 +143,7 @@ export function ZoningLegend({
                     isSelected
                       ? "border-primary bg-primary/5 shadow-sm"
                       : "border-border bg-card/50 hover:bg-card/80",
-                    onZoneClick && "cursor-pointer"
+                    onZoneClick && "cursor-pointer",
                   )}
                   onClick={() => onZoneClick?.(zone.code)}
                 >
@@ -153,7 +174,8 @@ export function ZoningLegend({
                         {/* Zone Statistics */}
                         {zoneStats && !compact && (
                           <div className="mt-1 text-xs text-muted-foreground">
-                            {formatArea(zoneStats.area)} • {zoneStats.count} {locale === "id" ? "zona" : "zones"}
+                            {formatArea(zoneStats.area)} • {zoneStats.count}{" "}
+                            {locale === "id" ? "zona" : "zones"}
                           </div>
                         )}
                       </div>
@@ -191,13 +213,17 @@ export function ZoningLegend({
                         <div className="grid grid-cols-2 gap-2 text-xs">
                           <div>
                             <span className="font-medium">FAR:</span>
-                            <span className="ml-1 text-muted-foreground">-</span>
+                            <span className="ml-1 text-muted-foreground">
+                              -
+                            </span>
                           </div>
                           <div>
                             <span className="font-medium">
                               {locale === "id" ? "Tinggi Maks:" : "Max Height:"}
                             </span>
-                            <span className="ml-1 text-muted-foreground">-</span>
+                            <span className="ml-1 text-muted-foreground">
+                              -
+                            </span>
                           </div>
                         </div>
                       </div>
@@ -217,7 +243,8 @@ export function ZoningLegend({
             </span>
             {selectedZones.length > 0 && (
               <span>
-                {locale === "id" ? "Dipilih:" : "Selected:"} {selectedZones.length}
+                {locale === "id" ? "Dipilih:" : "Selected:"}{" "}
+                {selectedZones.length}
               </span>
             )}
           </div>

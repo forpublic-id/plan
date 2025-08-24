@@ -1,5 +1,5 @@
-@import 'tailwindcss';
-@import 'leaflet/dist/leaflet.css';
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -105,13 +105,33 @@
 }
 
 /* Planning Zone Colors */
-.zone-residential-low { @apply fill-green-200 stroke-green-400; }
-.zone-residential-medium { @apply fill-green-300 stroke-green-500; }
-.zone-residential-high { @apply fill-green-400 stroke-green-600; }
-.zone-commercial { @apply fill-blue-200 stroke-blue-400; }
-.zone-office { @apply fill-blue-300 stroke-blue-500; }
-.zone-industrial { @apply fill-yellow-200 stroke-yellow-400; }
-.zone-mixed-use { @apply fill-purple-200 stroke-purple-400; }
-.zone-open-space { @apply fill-emerald-200 stroke-emerald-400; }
-.zone-infrastructure { @apply fill-gray-200 stroke-gray-400; }
-.zone-special { @apply fill-orange-200 stroke-orange-400; }
+.zone-residential-low {
+  @apply fill-green-200 stroke-green-400;
+}
+.zone-residential-medium {
+  @apply fill-green-300 stroke-green-500;
+}
+.zone-residential-high {
+  @apply fill-green-400 stroke-green-600;
+}
+.zone-commercial {
+  @apply fill-blue-200 stroke-blue-400;
+}
+.zone-office {
+  @apply fill-blue-300 stroke-blue-500;
+}
+.zone-industrial {
+  @apply fill-yellow-200 stroke-yellow-400;
+}
+.zone-mixed-use {
+  @apply fill-purple-200 stroke-purple-400;
+}
+.zone-open-space {
+  @apply fill-emerald-200 stroke-emerald-400;
+}
+.zone-infrastructure {
+  @apply fill-gray-200 stroke-gray-400;
+}
+.zone-special {
+  @apply fill-orange-200 stroke-orange-400;
+}

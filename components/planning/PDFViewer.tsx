@@ -49,7 +49,7 @@ export function PDFViewer({
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
   const [searchText, setSearchText] = useState<string>("");
   const [bookmarks, setBookmarks] = useState<number[]>([]);
-  
+
   const containerRef = useRef<HTMLDivElement>(null);
   const documentFile = document.files[fileIndex];
 
@@ -148,12 +148,12 @@ export function PDFViewer({
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className={cn(
         "flex flex-col h-full bg-background",
         isFullscreen && "fixed inset-0 z-50",
-        className
+        className,
       )}
     >
       {/* Header */}
@@ -173,32 +173,20 @@ export function PDFViewer({
                 </span>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-2">
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={shareDocument}
-              >
+              <Button variant="outline" size="sm" onClick={shareDocument}>
                 <Share2 className="w-4 h-4 mr-1" />
                 {locale === "id" ? "Bagikan" : "Share"}
               </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={downloadDocument}
-              >
+
+              <Button variant="outline" size="sm" onClick={downloadDocument}>
                 <Download className="w-4 h-4 mr-1" />
                 {locale === "id" ? "Unduh" : "Download"}
               </Button>
-              
+
               {onClose && (
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={onClose}
-                >
+                <Button variant="ghost" size="sm" onClick={onClose}>
                   ✕
                 </Button>
               )}
@@ -221,7 +209,7 @@ export function PDFViewer({
               >
                 <ChevronLeft className="w-4 h-4" />
               </Button>
-              
+
               <div className="flex items-center gap-2 text-sm">
                 <input
                   type="number"
@@ -235,7 +223,7 @@ export function PDFViewer({
                   / {formatNumber(numPages, locale)}
                 </span>
               </div>
-              
+
               <Button
                 variant="outline"
                 size="sm"
@@ -256,11 +244,11 @@ export function PDFViewer({
               >
                 <ZoomOut className="w-4 h-4" />
               </Button>
-              
+
               <span className="text-sm text-muted-foreground min-w-12 text-center">
                 {Math.round(scale * 100)}%
               </span>
-              
+
               <Button
                 variant="outline"
                 size="sm"
@@ -269,28 +257,16 @@ export function PDFViewer({
               >
                 <ZoomIn className="w-4 h-4" />
               </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={resetZoom}
-              >
+
+              <Button variant="outline" size="sm" onClick={resetZoom}>
                 1:1
               </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={rotateDocument}
-              >
+
+              <Button variant="outline" size="sm" onClick={rotateDocument}>
                 <RotateCcw className="w-4 h-4" />
               </Button>
-              
-              <Button
-                variant="outline"
-                size="sm"
-                onClick={toggleFullscreen}
-              >
+
+              <Button variant="outline" size="sm" onClick={toggleFullscreen}>
                 {isFullscreen ? (
                   <Minimize2 className="w-4 h-4" />
                 ) : (
@@ -307,14 +283,14 @@ export function PDFViewer({
                 onClick={() => toggleBookmark(pageNumber)}
                 className={bookmarks.includes(pageNumber) ? "text-primary" : ""}
               >
-                <Bookmark 
+                <Bookmark
                   className={cn(
                     "w-4 h-4",
-                    bookmarks.includes(pageNumber) && "fill-current"
-                  )} 
+                    bookmarks.includes(pageNumber) && "fill-current",
+                  )}
                 />
               </Button>
-              
+
               {bookmarks.length > 0 && (
                 <Badge variant="secondary" className="text-xs">
                   {bookmarks.length}
@@ -357,8 +333,8 @@ export function PDFViewer({
             <div className="text-center py-12">
               <FileText className="w-12 h-12 mx-auto text-destructive mb-4" />
               <p className="text-destructive mb-2">
-                {locale === "id" 
-                  ? "Error memuat dokumen" 
+                {locale === "id"
+                  ? "Error memuat dokumen"
                   : "Error loading document"}
               </p>
               <p className="text-sm text-muted-foreground">{error}</p>
@@ -393,25 +369,28 @@ export function PDFViewer({
           <div className="flex items-center justify-between text-sm text-muted-foreground">
             <div className="flex items-center gap-4">
               <span>
-                {locale === "id" ? "Halaman" : "Page"} {formatNumber(pageNumber, locale)} 
-                {" "}{locale === "id" ? "dari" : "of"} {formatNumber(numPages, locale)}
+                {locale === "id" ? "Halaman" : "Page"}{" "}
+                {formatNumber(pageNumber, locale)}{" "}
+                {locale === "id" ? "dari" : "of"}{" "}
+                {formatNumber(numPages, locale)}
               </span>
-              
+
               {bookmarks.length > 0 && (
                 <div className="flex items-center gap-1">
                   <Bookmark className="w-3 h-3" />
                   <span>
-                    {bookmarks.length} {locale === "id" ? "penanda" : "bookmarks"}
+                    {bookmarks.length}{" "}
+                    {locale === "id" ? "penanda" : "bookmarks"}
                   </span>
                 </div>
               )}
             </div>
-            
+
             <div className="flex items-center gap-4">
               <span>
                 {locale === "id" ? "Zoom" : "Zoom"}: {Math.round(scale * 100)}%
               </span>
-              
+
               {rotation > 0 && (
                 <span>
                   {locale === "id" ? "Rotasi" : "Rotation"}: {rotation}°

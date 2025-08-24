@@ -54,7 +54,9 @@ export function DocumentLibrary({
   locale = "id",
   className,
 }: DocumentLibraryProps) {
-  const [expandedDocuments, setExpandedDocuments] = useState<Set<string>>(new Set());
+  const [expandedDocuments, setExpandedDocuments] = useState<Set<string>>(
+    new Set(),
+  );
   const [showFilters, setShowFilters] = useState(false);
 
   // Filter and search documents
@@ -68,9 +70,9 @@ export function DocumentLibrary({
         (doc) =>
           doc.title[locale].toLowerCase().includes(query) ||
           doc.metadata.keywords.some((keyword) =>
-            keyword.toLowerCase().includes(query)
+            keyword.toLowerCase().includes(query),
           ) ||
-          doc.summary?.[locale]?.toLowerCase().includes(query)
+          doc.summary?.[locale]?.toLowerCase().includes(query),
       );
     }
 
@@ -90,8 +92,8 @@ export function DocumentLibrary({
     if (filters.region && filters.region.length > 0) {
       result = result.filter((doc) =>
         filters.region!.some((region) =>
-          doc.metadata.region.toLowerCase().includes(region.toLowerCase())
-        )
+          doc.metadata.region.toLowerCase().includes(region.toLowerCase()),
+        ),
       );
     }
 
@@ -99,9 +101,7 @@ export function DocumentLibrary({
       const { start, end } = filters.dateRange;
       result = result.filter((doc) => {
         const publishDate = new Date(doc.metadata.publishDate);
-        return (
-          publishDate >= new Date(start) && publishDate <= new Date(end)
-        );
+        return publishDate >= new Date(start) && publishDate <= new Date(end);
       });
     }
 
@@ -161,8 +161,7 @@ export function DocumentLibrary({
             </CardTitle>
             <div className="flex items-center gap-2">
               <Badge variant="secondary">
-                {formatNumber(filteredDocuments.length, locale)}
-                {" "}
+                {formatNumber(filteredDocuments.length, locale)}{" "}
                 {locale === "id" ? "dokumen" : "documents"}
               </Badge>
               <Button
@@ -189,7 +188,9 @@ export function DocumentLibrary({
                   : "Search documents, keywords, or topics..."
               }
               value={searchQuery}
-              onChange={(e) => onSearchChange?.((e.target as HTMLInputElement).value)}
+              onChange={(e) =>
+                onSearchChange?.((e.target as HTMLInputElement).value)
+              }
               className="w-full pl-10 pr-4 py-2 border border-input rounded-md bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
           </div>
@@ -207,7 +208,10 @@ export function DocumentLibrary({
                     multiple
                     value={filters.type || []}
                     onChange={(e) => {
-                      const selected = Array.from(e.target.selectedOptions, option => option.value);
+                      const selected = Array.from(
+                        e.target.selectedOptions,
+                        (option) => option.value,
+                      );
                       onFiltersChange?.({ ...filters, type: selected });
                     }}
                     className="w-full p-2 border border-input rounded-md bg-background text-sm"
@@ -239,7 +243,10 @@ export function DocumentLibrary({
                     multiple
                     value={filters.category || []}
                     onChange={(e) => {
-                      const selected = Array.from(e.target.selectedOptions, option => option.value);
+                      const selected = Array.from(
+                        e.target.selectedOptions,
+                        (option) => option.value,
+                      );
                       onFiltersChange?.({ ...filters, category: selected });
                     }}
                     className="w-full p-2 border border-input rounded-md bg-background text-sm"
@@ -271,7 +278,10 @@ export function DocumentLibrary({
                     multiple
                     value={filters.language || []}
                     onChange={(e) => {
-                      const selected = Array.from(e.target.selectedOptions, option => option.value);
+                      const selected = Array.from(
+                        e.target.selectedOptions,
+                        (option) => option.value,
+                      );
                       onFiltersChange?.({ ...filters, language: selected });
                     }}
                     className="w-full p-2 border border-input rounded-md bg-background text-sm"
@@ -317,16 +327,21 @@ export function DocumentLibrary({
         ) : (
           filteredDocuments.map((document) => {
             const isExpanded = expandedDocuments.has(document.id);
-            
+
             return (
-              <Card key={document.id} className="transition-all hover:shadow-md">
+              <Card
+                key={document.id}
+                className="transition-all hover:shadow-md"
+              >
                 <CardContent className="p-4">
                   <div className="flex items-start gap-4">
                     {/* Document Type Icon */}
-                    <div className={cn(
-                      "p-2 rounded-md border",
-                      getTypeColor(document.type)
-                    )}>
+                    <div
+                      className={cn(
+                        "p-2 rounded-md border",
+                        getTypeColor(document.type),
+                      )}
+                    >
                       {getTypeIcon(document.type)}
                     </div>
 
@@ -337,7 +352,7 @@ export function DocumentLibrary({
                           <h3 className="font-semibold text-lg mb-1 line-clamp-2">
                             {document.title[locale]}
                           </h3>
-                          
+
                           <div className="flex flex-wrap items-center gap-2 mb-2">
                             <Badge variant="outline" className="capitalize">
                               {document.type}
@@ -347,13 +362,16 @@ export function DocumentLibrary({
                             </Badge>
                             <div className="flex items-center gap-1 text-sm text-muted-foreground">
                               <Languages className="w-3 h-3" />
-                              {document.language === "both" 
-                                ? "ID/EN" 
+                              {document.language === "both"
+                                ? "ID/EN"
                                 : document.language.toUpperCase()}
                             </div>
                             <div className="flex items-center gap-1 text-sm text-muted-foreground">
                               <Calendar className="w-3 h-3" />
-                              {formatDate(document.metadata.publishDate, locale)}
+                              {formatDate(
+                                document.metadata.publishDate,
+                                locale,
+                              )}
                             </div>
                           </div>
 
@@ -364,7 +382,8 @@ export function DocumentLibrary({
                           )}
 
                           <div className="text-xs text-muted-foreground">
-                            {locale === "id" ? "Oleh" : "By"} {document.metadata.author} • 
+                            {locale === "id" ? "Oleh" : "By"}{" "}
+                            {document.metadata.author} •
                             {document.metadata.region}
                           </div>
                         </div>
@@ -379,7 +398,7 @@ export function DocumentLibrary({
                             <Eye className="w-4 h-4 mr-1" />
                             {locale === "id" ? "Lihat" : "View"}
                           </Button>
-                          
+
                           <Button
                             variant="ghost"
                             size="sm"
@@ -404,11 +423,17 @@ export function DocumentLibrary({
                                 {locale === "id" ? "Kata Kunci" : "Keywords"}
                               </h4>
                               <div className="flex flex-wrap gap-1">
-                                {document.metadata.keywords.slice(0, 8).map((keyword) => (
-                                  <Badge key={keyword} variant="outline" className="text-xs">
-                                    {keyword}
-                                  </Badge>
-                                ))}
+                                {document.metadata.keywords
+                                  .slice(0, 8)
+                                  .map((keyword) => (
+                                    <Badge
+                                      key={keyword}
+                                      variant="outline"
+                                      className="text-xs"
+                                    >
+                                      {keyword}
+                                    </Badge>
+                                  ))}
                               </div>
                             </div>
                           )}
@@ -436,24 +461,30 @@ export function DocumentLibrary({
                                         </div>
                                       )}
                                       <div className="text-xs text-muted-foreground">
-                                        {formatFileSize(document.fileSize)} • {document.format.toUpperCase()}
-                                        {document.pages && ` • ${document.pages} ${locale === "id" ? "halaman" : "pages"}`}
+                                        {formatFileSize(document.fileSize)} •{" "}
+                                        {document.format.toUpperCase()}
+                                        {document.pages &&
+                                          ` • ${document.pages} ${locale === "id" ? "halaman" : "pages"}`}
                                       </div>
                                     </div>
                                   </div>
-                                  
+
                                   <div className="flex items-center gap-1">
                                     <Button
                                       variant="ghost"
                                       size="sm"
-                                      onClick={() => onDocumentDownload?.(document, index)}
+                                      onClick={() =>
+                                        onDocumentDownload?.(document, index)
+                                      }
                                     >
                                       <Download className="w-4 h-4" />
                                     </Button>
                                     <Button
                                       variant="ghost"
                                       size="sm"
-                                      onClick={() => window.open(file.url, "_blank")}
+                                      onClick={() =>
+                                        window.open(file.url, "_blank")
+                                      }
                                     >
                                       <ExternalLink className="w-4 h-4" />
                                     </Button>

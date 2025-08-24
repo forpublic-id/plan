@@ -4,7 +4,14 @@ import React from "react";
 import { useTranslations } from "next-intl";
 import { Card, CardContent } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
-import { FileText, Map, Building2, Users, TrendingUp, Clock } from "lucide-react";
+import {
+  FileText,
+  Map,
+  Building2,
+  Users,
+  TrendingUp,
+  Clock,
+} from "lucide-react";
 
 export function Statistics() {
   const t = useTranslations("home.statistics");
@@ -48,7 +55,7 @@ export function Statistics() {
         { label: "RDTR Plans", value: "156", percentage: 30 },
         { label: "Master Plans", value: "89", percentage: 17 },
         { label: "Regulations", value: "95", percentage: 18 },
-      ]
+      ],
     },
     {
       category: "Data Coverage",
@@ -57,7 +64,7 @@ export function Statistics() {
         { label: "Rural Areas", value: "78%", percentage: 78 },
         { label: "Industrial Zones", value: "89%", percentage: 89 },
         { label: "Conservation Areas", value: "67%", percentage: 67 },
-      ]
+      ],
     },
     {
       category: "Public Engagement",
@@ -66,8 +73,8 @@ export function Statistics() {
         { label: "Public Comments", value: "2,847", percentage: 85 },
         { label: "Participating Cities", value: "156", percentage: 45 },
         { label: "Citizen Feedback", value: "4.2/5", percentage: 84 },
-      ]
-    }
+      ],
+    },
   ];
 
   return (
@@ -82,8 +89,8 @@ export function Statistics() {
             {t("title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Comprehensive data coverage across Indonesia&apos;s planning landscape, 
-            enabling transparent and informed development decisions.
+            Comprehensive data coverage across Indonesia&apos;s planning
+            landscape, enabling transparent and informed development decisions.
           </p>
         </div>
 
@@ -92,34 +99,37 @@ export function Statistics() {
           {mainStats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card key={index} className="text-center transition-all hover:shadow-lg">
+              <Card
+                key={index}
+                className="text-center transition-all hover:shadow-lg"
+              >
                 <CardContent className="p-6">
                   <div className="inline-flex p-3 rounded-full bg-primary/10 mb-4">
                     <Icon className="h-6 w-6 text-primary" />
                   </div>
-                  
+
                   <div className="text-3xl font-bold text-foreground mb-1">
                     {stat.value}
                   </div>
-                  
+
                   <div className="text-sm font-medium text-muted-foreground mb-2">
                     {stat.label}
                   </div>
-                  
+
                   <div className="flex items-center justify-center gap-2">
-                    <Badge 
-                      variant="secondary" 
+                    <Badge
+                      variant="secondary"
                       className={`text-xs ${
-                        stat.trend.includes('+') 
-                          ? 'text-green-600 bg-green-50' 
-                          : 'text-blue-600 bg-blue-50'
+                        stat.trend.includes("+")
+                          ? "text-green-600 bg-green-50"
+                          : "text-blue-600 bg-blue-50"
                       }`}
                     >
                       <TrendingUp className="w-3 h-3 mr-1" />
                       {stat.trend}
                     </Badge>
                   </div>
-                  
+
                   <p className="text-xs text-muted-foreground mt-2">
                     {stat.description}
                   </p>
@@ -138,16 +148,18 @@ export function Statistics() {
                   <div className="w-2 h-2 rounded-full bg-primary"></div>
                   {category.category}
                 </h3>
-                
+
                 <div className="space-y-4">
                   {category.items.map((item, itemIndex) => (
                     <div key={itemIndex} className="space-y-2">
                       <div className="flex justify-between text-sm">
-                        <span className="text-muted-foreground">{item.label}</span>
+                        <span className="text-muted-foreground">
+                          {item.label}
+                        </span>
                         <span className="font-medium">{item.value}</span>
                       </div>
                       <div className="w-full bg-muted rounded-full h-2 overflow-hidden">
-                        <div 
+                        <div
                           className="bg-primary h-2 rounded-full transition-all duration-1000"
                           style={{ width: `${item.percentage}%` }}
                         />
@@ -167,28 +179,41 @@ export function Statistics() {
               <Clock className="w-4 h-4" />
               Live Data
             </div>
-            
+
             <h3 className="text-2xl font-bold text-foreground mb-4">
               Real-time Planning Updates
             </h3>
-            
+
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Our platform continuously updates with the latest planning documents, 
-              zoning changes, and development approvals from government sources.
+              Our platform continuously updates with the latest planning
+              documents, zoning changes, and development approvals from
+              government sources.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">Daily</div>
-                <div className="text-sm text-muted-foreground">Document Updates</div>
+                <div className="text-2xl font-bold text-primary mb-1">
+                  Daily
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Document Updates
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">Weekly</div>
-                <div className="text-sm text-muted-foreground">Map Refreshes</div>
+                <div className="text-2xl font-bold text-primary mb-1">
+                  Weekly
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Map Refreshes
+                </div>
               </div>
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary mb-1">Monthly</div>
-                <div className="text-sm text-muted-foreground">Coverage Expansion</div>
+                <div className="text-2xl font-bold text-primary mb-1">
+                  Monthly
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  Coverage Expansion
+                </div>
               </div>
             </div>
           </div>

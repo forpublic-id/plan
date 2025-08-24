@@ -47,9 +47,9 @@ export function MapLayerControl({
     onFilterChange?.({});
   };
 
-  const visibleLayers = layers.filter(layer => layer.visible);
+  const visibleLayers = layers.filter((layer) => layer.visible);
   const activeFilterCount = Object.keys(activeFilters).filter(
-    key => activeFilters[key] && activeFilters[key] !== ""
+    (key) => activeFilters[key] && activeFilters[key] !== "",
   ).length;
 
   return (
@@ -75,7 +75,7 @@ export function MapLayerControl({
           </div>
         </div>
       </CardHeader>
-      
+
       <CardContent className="space-y-4">
         {/* Layer List */}
         <div className="space-y-2">
@@ -97,7 +97,7 @@ export function MapLayerControl({
                     <EyeOff className="w-3 h-3 text-muted-foreground" />
                   )}
                 </Button>
-                
+
                 <div className="flex-1">
                   <div className="flex items-center gap-2">
                     {layer.color && (
@@ -110,22 +110,19 @@ export function MapLayerControl({
                       {layer.name[locale]}
                     </span>
                   </div>
-                  
+
                   {layer.description && isExpanded && (
                     <p className="text-xs text-muted-foreground mt-1">
                       {layer.description[locale]}
                     </p>
                   )}
                 </div>
-                
-                <Badge
-                  variant="outline"
-                  className="text-xs capitalize"
-                >
+
+                <Badge variant="outline" className="text-xs capitalize">
                   {layer.type}
                 </Badge>
               </div>
-              
+
               {/* Opacity Slider (shown when expanded) */}
               {isExpanded && layer.visible && (
                 <div className="ml-2 w-20">
@@ -147,7 +144,7 @@ export function MapLayerControl({
             </div>
           ))}
         </div>
-        
+
         {/* Filter Controls */}
         {onFilterChange && (
           <div className="border-t pt-4">
@@ -174,7 +171,7 @@ export function MapLayerControl({
                 </div>
               )}
             </div>
-            
+
             <div className="space-y-3">
               {/* Zone Type Filter */}
               <div>
@@ -183,7 +180,9 @@ export function MapLayerControl({
                 </label>
                 <select
                   value={activeFilters.zoneType || ""}
-                  onChange={(e) => handleFilterChange("zoneType", e.target.value)}
+                  onChange={(e) =>
+                    handleFilterChange("zoneType", e.target.value)
+                  }
                   className="w-full mt-1 px-2 py-1 text-xs border border-input rounded-md bg-background"
                 >
                   <option value="">
@@ -203,15 +202,19 @@ export function MapLayerControl({
                   </option>
                 </select>
               </div>
-              
+
               {/* Development Status Filter */}
               <div>
                 <label className="text-xs font-medium text-muted-foreground">
-                  {locale === "id" ? "Status Pembangunan" : "Development Status"}
+                  {locale === "id"
+                    ? "Status Pembangunan"
+                    : "Development Status"}
                 </label>
                 <select
                   value={activeFilters.developmentStatus || ""}
-                  onChange={(e) => handleFilterChange("developmentStatus", e.target.value)}
+                  onChange={(e) =>
+                    handleFilterChange("developmentStatus", e.target.value)
+                  }
                   className="w-full mt-1 px-2 py-1 text-xs border border-input rounded-md bg-background"
                 >
                   <option value="">
@@ -224,14 +227,16 @@ export function MapLayerControl({
                     {locale === "id" ? "Terbangun" : "Developed"}
                   </option>
                   <option value="under-development">
-                    {locale === "id" ? "Dalam Pembangunan" : "Under Development"}
+                    {locale === "id"
+                      ? "Dalam Pembangunan"
+                      : "Under Development"}
                   </option>
                   <option value="planned">
                     {locale === "id" ? "Direncanakan" : "Planned"}
                   </option>
                 </select>
               </div>
-              
+
               {/* Area Range Filter */}
               <div>
                 <label className="text-xs font-medium text-muted-foreground">
@@ -242,14 +247,18 @@ export function MapLayerControl({
                     type="number"
                     placeholder="Min"
                     value={activeFilters.minArea || ""}
-                    onChange={(e) => handleFilterChange("minArea", e.target.value)}
+                    onChange={(e) =>
+                      handleFilterChange("minArea", e.target.value)
+                    }
                     className="w-full px-2 py-1 text-xs border border-input rounded-md bg-background"
                   />
                   <input
                     type="number"
                     placeholder="Max"
                     value={activeFilters.maxArea || ""}
-                    onChange={(e) => handleFilterChange("maxArea", e.target.value)}
+                    onChange={(e) =>
+                      handleFilterChange("maxArea", e.target.value)
+                    }
                     className="w-full px-2 py-1 text-xs border border-input rounded-md bg-background"
                   />
                 </div>
@@ -257,16 +266,18 @@ export function MapLayerControl({
             </div>
           </div>
         )}
-        
+
         {/* Layer Statistics */}
         {isExpanded && (
           <div className="border-t pt-4 text-xs text-muted-foreground">
             <div className="grid grid-cols-2 gap-2">
               <div>
-                {locale === "id" ? "Layer Aktif" : "Active Layers"}: {visibleLayers.length}
+                {locale === "id" ? "Layer Aktif" : "Active Layers"}:{" "}
+                {visibleLayers.length}
               </div>
               <div>
-                {locale === "id" ? "Filter Aktif" : "Active Filters"}: {activeFilterCount}
+                {locale === "id" ? "Filter Aktif" : "Active Filters"}:{" "}
+                {activeFilterCount}
               </div>
             </div>
           </div>

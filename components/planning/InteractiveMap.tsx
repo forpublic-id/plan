@@ -3,7 +3,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import L, { Map as LeafletMap, TileLayer, GeoJSON } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { PlanningGeoJSON, PlanningFeatureProperties } from "@/lib/types/planning";
+import {
+  PlanningGeoJSON,
+  PlanningFeatureProperties,
+} from "@/lib/types/planning";
 import { getZoneColor, formatArea, formatHeight, formatFAR } from "@/lib/utils";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui";
 
@@ -61,21 +64,25 @@ export function InteractiveMap({
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors | <a href="https://plan.forpublic.id">Plan ForPublic.id</a>',
         maxZoom: 19,
-      }
+      },
     );
     tileLayer.addTo(map.current);
 
     // Add zoom control
-    L.control.zoom({
-      position: "topright",
-    }).addTo(map.current);
+    L.control
+      .zoom({
+        position: "topright",
+      })
+      .addTo(map.current);
 
     // Add scale control
-    L.control.scale({
-      position: "bottomright",
-      metric: true,
-      imperial: false,
-    }).addTo(map.current);
+    L.control
+      .scale({
+        position: "bottomright",
+        metric: true,
+        imperial: false,
+      })
+      .addTo(map.current);
 
     return () => {
       if (map.current) {
@@ -98,17 +105,19 @@ export function InteractiveMap({
     geoJsonLayer.current = L.geoJSON(data, {
       style: (feature) => {
         if (!feature?.properties) return {};
-        
+
         const props = feature.properties as PlanningFeatureProperties;
         const color = getZoneColor(props.zone);
-        
+
         return {
           fillColor: color,
           weight: 2,
           opacity: 1,
           color: color.replace(/[^,]*/, (match) => {
             const num = parseInt(match.slice(1), 16);
-            return `#${Math.max(0, num - 0x333333).toString(16).padStart(6, "0")}`;
+            return `#${Math.max(0, num - 0x333333)
+              .toString(16)
+              .padStart(6, "0")}`;
           }),
           dashArray: "3",
           fillOpacity: 0.7,
@@ -116,7 +125,7 @@ export function InteractiveMap({
       },
       onEachFeature: (feature, layer) => {
         const props = feature.properties as PlanningFeatureProperties;
-        
+
         // Create popup content
         if (showPopups) {
           const popupContent = `
@@ -132,13 +141,13 @@ export function InteractiveMap({
               </div>
             </div>
           `;
-          
+
           layer.bindPopup(popupContent, {
             maxWidth: 300,
             className: "planning-popup",
           });
         }
-        
+
         // Add event listeners
         layer.on({
           click: (e) => {
@@ -152,11 +161,11 @@ export function InteractiveMap({
               weight: 4,
               fillOpacity: 0.9,
             });
-            
+
             if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
               layer.bringToFront();
             }
-            
+
             setHoveredFeature(feature);
             onFeatureHover?.(feature);
           },
@@ -192,7 +201,7 @@ export function InteractiveMap({
         className="w-full rounded-lg border border-border overflow-hidden"
         style={{ height }}
       />
-      
+
       {/* Map Legend */}
       {data && (
         <Card className="absolute top-4 left-4 z-[1000] max-w-xs">
@@ -202,14 +211,16 @@ export function InteractiveMap({
           <CardContent className="space-y-1">
             {Array.from(
               new Set(
-                data.features.map((f) => `${f.properties.zone}:${f.properties.landUse}`)
-              )
+                data.features.map(
+                  (f) => `${f.properties.zone}:${f.properties.landUse}`,
+                ),
+              ),
             )
               .slice(0, 8) // Limit to 8 items
               .map((zoneInfo) => {
                 const [zone, landUse] = zoneInfo.split(":");
                 const color = getZoneColor(zone);
-                
+
                 return (
                   <div key={zone} className="flex items-center gap-2 text-xs">
                     <div
@@ -224,7 +235,7 @@ export function InteractiveMap({
           </CardContent>
         </Card>
       )}
-      
+
       {/* Feature Info Panel */}
       {hoveredFeature && (
         <Card className="absolute bottom-4 right-4 z-[1000] max-w-sm">
@@ -235,16 +246,22 @@ export function InteractiveMap({
               </h4>
               <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
                 <div>
-                  <span className="font-medium">Zone:</span> {hoveredFeature.properties.zone}
+                  <span className="font-medium">Zone:</span>{" "}
+                  {hoveredFeature.properties.zone}
                 </div>
                 <div>
-                  <span className="font-medium">Area:</span> {formatArea(hoveredFeature.properties.area)}
+                  <span className="font-medium">Area:</span>{" "}
+                  {formatArea(hoveredFeature.properties.area)}
                 </div>
                 <div>
-                  <span className="font-medium">FAR:</span> {formatFAR(hoveredFeature.properties.regulations.far)}
+                  <span className="font-medium">FAR:</span>{" "}
+                  {formatFAR(hoveredFeature.properties.regulations.far)}
                 </div>
                 <div>
-                  <span className="font-medium">Height:</span> {formatHeight(hoveredFeature.properties.regulations.height.max)}
+                  <span className="font-medium">Height:</span>{" "}
+                  {formatHeight(
+                    hoveredFeature.properties.regulations.height.max,
+                  )}
                 </div>
               </div>
             </div>

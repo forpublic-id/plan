@@ -7,6 +7,7 @@ Plan ForPublic.id is a comprehensive Indonesian development planning transparenc
 ## Tech Stack & Architecture
 
 ### Core Technologies
+
 - **Next.js 15** with App Router
 - **React 19** for UI components
 - **TypeScript** for type safety
@@ -15,12 +16,14 @@ Plan ForPublic.id is a comprehensive Indonesian development planning transparenc
 - **Bun** as package manager and runtime
 
 ### Mapping & Visualization
+
 - **Leaflet.js** for interactive maps
 - **react-leaflet** for React integration
 - **GeoJSON** for spatial data
 - **React PDF** for document viewing
 
 ### Data Architecture
+
 - **JSON-based** data storage (NO DATABASE)
 - **GeoJSON** for geographic data
 - **Static files** in `/public/data/plans/`
@@ -92,6 +95,7 @@ plan/
 ## Key Features Implemented
 
 ### 🗺️ Interactive Planning Maps
+
 - **InteractiveMap**: Leaflet-based map component with GeoJSON support
 - **MapLayerControl**: Advanced layer management with filters
 - **ZoningLegend**: Color-coded zoning classification display
@@ -99,18 +103,21 @@ plan/
 - **Multi-layer support**: Zoning, infrastructure, projects overlays
 
 ### 📋 Document Library System
+
 - **DocumentLibrary**: Searchable document repository
 - **PDFViewer**: Full-featured PDF viewer with zoom, rotation, bookmarks
 - **Advanced search**: Text search with filters by type, category, region
 - **Multi-language support**: Document viewing in ID/EN
 
 ### 🌍 Bilingual Architecture
+
 - **Complete i18n**: All UI elements translated
 - **Dynamic routing**: `/id/` and `/en/` locale paths
 - **RTL support ready**: Infrastructure for future RTL languages
 - **Consistent branding**: ForPublic.id ecosystem integration
 
 ### 📊 Comprehensive Data Types
+
 - **PlanningGeoJSON**: Spatial data with rich properties
 - **ZoneClassification**: Detailed zoning categories
 - **BuildingRegulations**: FAR, height, setback rules
@@ -138,6 +145,7 @@ bun run format:check # Check formatting
 ## Data Management
 
 ### Spatial Data Structure
+
 ```typescript
 interface PlanningGeoJSON {
   type: "FeatureCollection";
@@ -151,12 +159,14 @@ interface PlanningGeoJSON {
 ```
 
 ### Sample Data Files
+
 - `/public/data/plans/spatial/rtrw/dki-jakarta.json` - Jakarta spatial plan
 - `/public/data/plans/zoning/maps/jakarta-zones.geojson` - Jakarta zoning map
 - `/public/data/plans/documents/sample-documents.json` - Document library
 - `/public/data/plans/meta/sources.json` - Data sources & attribution
 
 ### Adding New Data
+
 1. Follow the TypeScript interfaces in `lib/types/planning.ts`
 2. Place JSON files in appropriate `/public/data/plans/` subdirectories
 3. Update metadata in `sources.json`
@@ -165,13 +175,14 @@ interface PlanningGeoJSON {
 ## Component Usage Examples
 
 ### Interactive Map
+
 ```tsx
 import { InteractiveMap } from "@/components/planning";
 import { PlanningGeoJSON } from "@/lib/types/planning";
 
 function MapPage() {
   const [mapData, setMapData] = useState<PlanningGeoJSON>();
-  
+
   return (
     <InteractiveMap
       data={mapData}
@@ -186,13 +197,14 @@ function MapPage() {
 ```
 
 ### Document Library
+
 ```tsx
 import { DocumentLibrary } from "@/components/planning";
 import { PlanningDocument } from "@/lib/types/planning";
 
 function DocumentsPage() {
   const [documents, setDocuments] = useState<PlanningDocument[]>([]);
-  
+
   return (
     <DocumentLibrary
       documents={documents}
@@ -208,22 +220,31 @@ function DocumentsPage() {
 ## Styling & Design System
 
 ### Tailwind Configuration
+
 - **Custom colors**: ForPublic.id red branding (`--primary`)
 - **Dark mode ready**: Complete dark/light theme support
 - **Responsive design**: Mobile-first approach
 - **Planning-specific classes**: Zone colors, map styles
 
 ### Zone Color System
+
 ```css
-.zone-residential-low { @apply fill-green-200 stroke-green-400; }
-.zone-commercial { @apply fill-blue-200 stroke-blue-400; }
-.zone-industrial { @apply fill-yellow-200 stroke-yellow-400; }
+.zone-residential-low {
+  @apply fill-green-200 stroke-green-400;
+}
+.zone-commercial {
+  @apply fill-blue-200 stroke-blue-400;
+}
+.zone-industrial {
+  @apply fill-yellow-200 stroke-yellow-400;
+}
 /* ... more zone colors in globals.css */
 ```
 
 ## API Integration (Future)
 
 ### Planned API Endpoints
+
 ```typescript
 GET /api/plans/spatial/:region     // Spatial planning data
 GET /api/plans/zoning/:region      // Zoning maps & regulations
@@ -235,12 +256,14 @@ GET /api/statistics               // Platform statistics
 ## Performance Optimization
 
 ### Map Performance
+
 - **Lazy loading**: Large GeoJSON files loaded on demand
 - **Clustering**: Marker clustering for dense data
 - **Viewport culling**: Only render visible features
 - **Progressive enhancement**: Map works without JavaScript
 
 ### Document Performance
+
 - **PDF streaming**: Large documents streamed progressively
 - **Thumbnail generation**: PDF page thumbnails cached
 - **Search indexing**: Client-side search with indexedDB
@@ -248,12 +271,14 @@ GET /api/statistics               // Platform statistics
 ## SEO & Accessibility
 
 ### SEO Features
+
 - **Dynamic metadata**: Locale-specific titles & descriptions
 - **Structured data**: Rich snippets for planning documents
 - **Sitemap generation**: Automatic multilingual sitemaps
 - **OpenGraph**: Social media sharing optimization
 
 ### Accessibility
+
 - **WCAG 2.1 AA**: Full compliance target
 - **Keyboard navigation**: All interactive elements accessible
 - **Screen readers**: Proper ARIA labels on maps
@@ -262,6 +287,7 @@ GET /api/statistics               // Platform statistics
 ## Deployment
 
 ### Vercel Configuration
+
 ```json
 {
   "framework": "nextjs",
@@ -275,22 +301,26 @@ GET /api/statistics               // Platform statistics
 ```
 
 ### Environment Variables
+
 - `NEXT_PUBLIC_GA_ID`: Google Analytics tracking
 - `NEXT_PUBLIC_MAPBOX_TOKEN`: Mapbox tiles (optional)
 
 ### Domain Setup
+
 - Primary: `plan.forpublic.id`
 - Staging: `plan-staging.forpublic.id`
 
 ## Contributing Guidelines
 
 ### Code Quality
+
 - **TypeScript strict**: All code must be type-safe
 - **ESLint + Prettier**: Consistent formatting enforced
 - **Component patterns**: Follow existing architectural patterns
 - **Testing**: Component testing with React Testing Library
 
 ### Data Standards
+
 - **GeoJSON compliance**: All spatial data must validate
 - **Metadata completeness**: Required fields for all planning data
 - **Source attribution**: Track data provenance and updates
@@ -299,12 +329,14 @@ GET /api/statistics               // Platform statistics
 ## Legal & Compliance
 
 ### Data Sources
+
 - **Government official**: All data from verified government sources
 - **Attribution required**: Proper crediting of data sources
 - **Update frequency**: Regular synchronization with source systems
 - **Access rights**: Respect for data usage restrictions
 
 ### Privacy
+
 - **No personal data**: Platform doesn't collect personal information
 - **Analytics minimal**: Basic usage tracking only
 - **Cookie compliance**: GDPR-ready cookie management
@@ -312,12 +344,14 @@ GET /api/statistics               // Platform statistics
 ## Future Enhancements
 
 ### Phase 2 Features
+
 - **3D visualization**: Building height and massing visualization
 - **Time-series analysis**: Historical planning data comparison
 - **Public consultation**: Integrated feedback and comment system
 - **Mobile app**: React Native companion application
 
 ### Phase 3 Features
+
 - **AI planning assistant**: Natural language planning queries
 - **Predictive modeling**: Development impact simulation
 - **Real-time updates**: WebSocket-based live data feeds

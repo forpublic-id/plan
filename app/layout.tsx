@@ -7,7 +7,8 @@ export const metadata: Metadata = {
     template: "%s | Plan ForPublic.id",
     default: "Plan ForPublic.id - Indonesian Planning Transparency",
   },
-  description: "Comprehensive platform for Indonesian development planning transparency, zoning maps, and public participation in spatial planning.",
+  description:
+    "Comprehensive platform for Indonesian development planning transparency, zoning maps, and public participation in spatial planning.",
   keywords: [
     "Indonesian planning",
     "spatial planning",
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     "public participation",
     "RTRW",
     "RDTR",
-    "planning documents"
+    "planning documents",
   ],
   authors: [{ name: "ForPublic.id" }],
   creator: "ForPublic.id",
@@ -40,12 +41,14 @@ export const metadata: Metadata = {
     url: "https://plan.forpublic.id",
     siteName: "Plan ForPublic.id",
     title: "Plan ForPublic.id - Indonesian Planning Transparency",
-    description: "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
+    description:
+      "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
   },
   twitter: {
     card: "summary_large_image",
     title: "Plan ForPublic.id - Indonesian Planning Transparency",
-    description: "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
+    description:
+      "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
   },
 };
 

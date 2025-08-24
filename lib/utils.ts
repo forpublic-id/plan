@@ -31,28 +31,28 @@ export function getZoneColor(zoneCode: string): string {
     R1: "#90EE90", // Light green
     R2: "#7FDD7F", // Medium green
     R3: "#6FCC6F", // Dark green
-    
+
     // Commercial zones
     K1: "#87CEEB", // Sky blue
     K2: "#4682B4", // Steel blue
-    
+
     // Industrial zones
     I1: "#FFD700", // Gold
     I2: "#FFA500", // Orange
-    
+
     // Mixed-use zones
     KT: "#DDA0DD", // Plum
-    
+
     // Infrastructure zones
     SPU: "#FFB6C1", // Light pink
-    
+
     // Open space zones
     RTH: "#32CD32", // Lime green
-    
+
     // Special zones
     KS: "#F0E68C", // Khaki
   };
-  
+
   return zoneColors[zoneCode] || "#CCCCCC"; // Default gray
 }
 
@@ -66,7 +66,7 @@ export function getZoneCategoryColor(category: string): string {
     "open-space": "#32CD32",
     special: "#F0E68C",
   };
-  
+
   return categoryColors[category] || "#CCCCCC";
 }
 
@@ -74,33 +74,36 @@ export function calculateZoneStatistics(features: any[]) {
   const stats = {
     totalArea: 0,
     zoneCount: features.length,
-    categoryStats: {} as Record<string, { area: number; count: number; percentage: number }>,
+    categoryStats: {} as Record<
+      string,
+      { area: number; count: number; percentage: number }
+    >,
   };
-  
+
   features.forEach((feature) => {
     const area = feature?.properties?.area || 0;
     const category = feature?.properties?.zoneCategory;
-    
+
     if (!category) return;
-    
+
     stats.totalArea += area;
-    
+
     if (!stats.categoryStats[category]) {
       stats.categoryStats[category] = { area: 0, count: 0, percentage: 0 };
     }
-    
+
     stats.categoryStats[category].area += area;
     stats.categoryStats[category].count += 1;
   });
-  
+
   // Calculate percentages
   if (stats.totalArea > 0) {
     Object.keys(stats.categoryStats).forEach((category) => {
-      stats.categoryStats[category].percentage = 
+      stats.categoryStats[category].percentage =
         (stats.categoryStats[category].area / stats.totalArea) * 100;
     });
   }
-  
+
   return stats;
 }
 
@@ -113,7 +116,7 @@ export function formatCurrency(amount: number, currency = "IDR"): string {
       maximumFractionDigits: 0,
     }).format(amount);
   }
-  
+
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency,
@@ -142,7 +145,7 @@ export function slugify(text: string): string {
 
 export function debounce<T extends (...args: any[]) => any>(
   func: T,
-  wait: number
+  wait: number,
 ): (...args: Parameters<T>) => void {
   let timeout: NodeJS.Timeout;
   return (...args: Parameters<T>) => {

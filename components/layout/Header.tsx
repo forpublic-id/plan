@@ -7,7 +7,17 @@ import { usePathname, useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 import { Badge } from "@/components/ui/Badge";
 import { cn } from "@/lib/utils";
-import { Menu, X, Globe, Map, FileText, Building2, Users, Info, BookOpen } from "lucide-react";
+import {
+  Menu,
+  X,
+  Globe,
+  Map,
+  FileText,
+  Building2,
+  Users,
+  Info,
+  BookOpen,
+} from "lucide-react";
 
 export function Header() {
   const t = useTranslations("nav");
@@ -82,14 +92,18 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href={`/${currentLocale}`} className="flex items-center space-x-2">
+            <Link
+              href={`/${currentLocale}`}
+              className="flex items-center space-x-2"
+            >
               <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground font-bold">
                 P
               </div>
-              <div className="hidden font-bold sm:block">
-                Plan ForPublic.id
-              </div>
-              <Badge variant="secondary" className="hidden text-xs sm:inline-flex">
+              <div className="hidden font-bold sm:block">Plan ForPublic.id</div>
+              <Badge
+                variant="secondary"
+                className="hidden text-xs sm:inline-flex"
+              >
                 Beta
               </Badge>
             </Link>
@@ -107,7 +121,7 @@ export function Header() {
                     "flex items-center space-x-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
                     item.current
                       ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
                   )}
                 >
                   <Icon className="h-4 w-4" />
@@ -160,7 +174,7 @@ export function Header() {
                       "flex items-center space-x-2 rounded-md px-3 py-2 text-base font-medium transition-colors",
                       item.current
                         ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground"
+                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
                     )}
                   >
                     <Icon className="h-5 w-5" />
@@ -168,7 +182,7 @@ export function Header() {
                   </Link>
                 );
               })}
-              
+
               {/* Mobile Language Switcher */}
               <button
                 onClick={() => {
@@ -178,7 +192,9 @@ export function Header() {
                 className="flex w-full items-center space-x-2 rounded-md px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 <Globe className="h-5 w-5" />
-                <span>{t("languageSwitcher")} ({currentLocale.toUpperCase()})</span>
+                <span>
+                  {t("languageSwitcher")} ({currentLocale.toUpperCase()})
+                </span>
               </button>
             </div>
           </div>

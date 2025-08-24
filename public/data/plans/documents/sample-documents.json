@@ -17,7 +17,13 @@
       "author": "Pemprov DKI Jakarta",
       "publishDate": "2022-03-15",
       "legalBasis": "Perda DKI Jakarta No. 1 Tahun 2012",
-      "keywords": ["tata ruang", "jakarta", "zonasi", "pembangunan", "spatial planning"]
+      "keywords": [
+        "tata ruang",
+        "jakarta",
+        "zonasi",
+        "pembangunan",
+        "spatial planning"
+      ]
     },
     "files": [
       {
@@ -52,7 +58,13 @@
       "region": "DKI Jakarta",
       "author": "Dinas Perhubungan DKI Jakarta",
       "publishDate": "2023-07-20",
-      "keywords": ["transportasi", "jakarta", "masterplan", "mobilitas", "transportation"]
+      "keywords": [
+        "transportasi",
+        "jakarta",
+        "masterplan",
+        "mobilitas",
+        "transportation"
+      ]
     },
     "files": [
       {
@@ -116,7 +128,13 @@
       "region": "Jawa Barat",
       "author": "DLHK Jawa Barat",
       "publishDate": "2023-05-15",
-      "keywords": ["lingkungan", "klhs", "jawa barat", "strategis", "environmental"]
+      "keywords": [
+        "lingkungan",
+        "klhs",
+        "jawa barat",
+        "strategis",
+        "environmental"
+      ]
     },
     "files": [
       {
@@ -147,7 +165,13 @@
       "region": "Nasional",
       "author": "Kementerian ATR/BPN",
       "publishDate": "2024-01-20",
-      "keywords": ["perizinan", "pembangunan", "panduan", "permits", "development"]
+      "keywords": [
+        "perizinan",
+        "pembangunan",
+        "panduan",
+        "permits",
+        "development"
+      ]
     },
     "files": [
       {

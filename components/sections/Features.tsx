@@ -3,19 +3,19 @@
 import React from "react";
 import { useTranslations } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
-import { 
-  Map, 
-  FileText, 
-  Search, 
-  BarChart3, 
-  Users, 
+import {
+  Map,
+  FileText,
+  Search,
+  BarChart3,
+  Users,
   Code,
   Layers,
   Download,
   MessageSquare,
   Calendar,
   Globe,
-  Zap
+  Zap,
 } from "lucide-react";
 
 export function Features() {
@@ -70,32 +70,38 @@ export function Features() {
     {
       icon: Layers,
       title: "Layer Control",
-      description: "Advanced map layer management with opacity controls and filtering options",
+      description:
+        "Advanced map layer management with opacity controls and filtering options",
     },
     {
       icon: Download,
       title: "Data Export",
-      description: "Export planning data in multiple formats including GeoJSON, Shapefile, and PDF",
+      description:
+        "Export planning data in multiple formats including GeoJSON, Shapefile, and PDF",
     },
     {
       icon: MessageSquare,
       title: "Public Comments",
-      description: "Submit and view public comments on development proposals and planning documents",
+      description:
+        "Submit and view public comments on development proposals and planning documents",
     },
     {
       icon: Calendar,
       title: "Event Tracking",
-      description: "Track public hearings, consultation periods, and planning milestones",
+      description:
+        "Track public hearings, consultation periods, and planning milestones",
     },
     {
       icon: Globe,
       title: "Bilingual Support",
-      description: "Full Indonesian and English support for documents and interface",
+      description:
+        "Full Indonesian and English support for documents and interface",
     },
     {
       icon: Zap,
       title: "Real-time Updates",
-      description: "Get notifications about planning changes and new document publications",
+      description:
+        "Get notifications about planning changes and new document publications",
     },
   ];
 
@@ -117,9 +123,14 @@ export function Features() {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card key={index} className="transition-all hover:shadow-lg border-0 bg-card">
+              <Card
+                key={index}
+                className="transition-all hover:shadow-lg border-0 bg-card"
+              >
                 <CardHeader>
-                  <div className={`inline-flex p-3 rounded-lg ${feature.bgColor} w-fit mb-4`}>
+                  <div
+                    className={`inline-flex p-3 rounded-lg ${feature.bgColor} w-fit mb-4`}
+                  >
                     <Icon className={`h-6 w-6 ${feature.color}`} />
                   </div>
                   <CardTitle className="text-xl">{feature.title}</CardTitle>
@@ -139,7 +150,8 @@ export function Features() {
               More Features
             </h3>
             <p className="text-muted-foreground">
-              Comprehensive tools for planning transparency and public engagement
+              Comprehensive tools for planning transparency and public
+              engagement
             </p>
           </div>
 
@@ -175,10 +187,11 @@ export function Features() {
               Integrated Planning Ecosystem
             </h3>
             <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Seamlessly connect spatial planning with budget allocation, development projects, 
-              and community engagement for comprehensive planning transparency.
+              Seamlessly connect spatial planning with budget allocation,
+              development projects, and community engagement for comprehensive
+              planning transparency.
             </p>
-            
+
             <div className="flex flex-wrap justify-center gap-4">
               <div className="px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium">
                 Spatial Planning

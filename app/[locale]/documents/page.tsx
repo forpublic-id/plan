@@ -23,7 +23,7 @@ export default async function DocumentsRoute({
 }) {
   const { locale } = await params;
   const t = await getTranslations("documents");
-  
+
   return (
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">

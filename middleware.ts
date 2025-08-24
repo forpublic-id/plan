@@ -7,11 +7,11 @@ export default createMiddleware({
   // Used when no locale matches
   defaultLocale: "id",
 
-  // Disable automatic locale detection
-  localeDetection: false,
+  // Enable automatic locale detection
+  localeDetection: true,
 });
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(id|en)/:path*"],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

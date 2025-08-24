@@ -6,7 +6,7 @@ export interface PlanningMetadata {
   planType: "RTRW" | "RDTR" | "RTBL" | "Master Plan" | "Sectoral Plan";
   validPeriod: {
     start: string; // ISO date
-    end: string;   // ISO date
+    end: string; // ISO date
   };
   lastUpdated: string; // ISO date
   source: string;
@@ -31,7 +31,14 @@ export interface ZoneClassification {
     en: string;
   };
   color: string; // Hex color for map display
-  category: "residential" | "commercial" | "industrial" | "mixed-use" | "open-space" | "infrastructure" | "special";
+  category:
+    | "residential"
+    | "commercial"
+    | "industrial"
+    | "mixed-use"
+    | "open-space"
+    | "infrastructure"
+    | "special";
   density?: "low" | "medium" | "high";
   description: {
     id: string;
@@ -40,12 +47,12 @@ export interface ZoneClassification {
 }
 
 export interface BuildingRegulations {
-  far: number;        // Floor Area Ratio
-  coverage: number;   // Building Coverage Ratio (%)
+  far: number; // Floor Area Ratio
+  coverage: number; // Building Coverage Ratio (%)
   height: {
-    min?: number;     // Minimum height in meters
-    max: number;      // Maximum height in meters
-    floors?: number;  // Maximum floors
+    min?: number; // Minimum height in meters
+    max: number; // Maximum height in meters
+    floors?: number; // Maximum floors
   };
   setback: {
     front: number;
@@ -89,11 +96,11 @@ export interface InfrastructureLayer {
 // GeoJSON Feature Properties for Planning Data
 export interface PlanningFeatureProperties {
   id: string;
-  zone: string;           // Zone code
-  landUse: string;       // Current or planned land use
+  zone: string; // Zone code
+  landUse: string; // Current or planned land use
   zoneCategory: ZoneClassification["category"];
   regulations: BuildingRegulations;
-  area: number;          // Area in hectares
+  area: number; // Area in hectares
   ownership: "public" | "private" | "mixed";
   developmentStatus: "vacant" | "developed" | "under-development" | "planned";
   restrictions?: string[]; // Special restrictions or conditions
@@ -164,7 +171,13 @@ export interface DevelopmentProject {
     id: string;
     en: string;
   };
-  type: "housing" | "commercial" | "office" | "industrial" | "infrastructure" | "mixed-use";
+  type:
+    | "housing"
+    | "commercial"
+    | "office"
+    | "industrial"
+    | "infrastructure"
+    | "mixed-use";
   location: {
     address: string;
     coordinates: [number, number]; // [longitude, latitude]
@@ -174,7 +187,12 @@ export interface DevelopmentProject {
     name: string;
     type: "private" | "government" | "ppp"; // public-private partnership
   };
-  status: "proposed" | "approved" | "under-construction" | "completed" | "cancelled";
+  status:
+    | "proposed"
+    | "approved"
+    | "under-construction"
+    | "completed"
+    | "cancelled";
   timeline: {
     proposed: string;
     approved?: string;
@@ -184,8 +202,8 @@ export interface DevelopmentProject {
     };
   };
   scale: {
-    area: number;      // hectares
-    units?: number;    // for housing/commercial
+    area: number; // hectares
+    units?: number; // for housing/commercial
     floors: number;
     far: number;
   };
@@ -216,8 +234,20 @@ export interface PlanningDocument {
     id: string;
     en: string;
   };
-  type: "regulation" | "map" | "report" | "study" | "guideline" | "presentation";
-  category: "spatial-plan" | "master-plan" | "environmental" | "transportation" | "housing" | "economic";
+  type:
+    | "regulation"
+    | "map"
+    | "report"
+    | "study"
+    | "guideline"
+    | "presentation";
+  category:
+    | "spatial-plan"
+    | "master-plan"
+    | "environmental"
+    | "transportation"
+    | "housing"
+    | "economic";
   language: "id" | "en" | "both";
   format: "pdf" | "dwg" | "shp" | "kml" | "image";
   fileSize: number; // bytes
@@ -275,11 +305,14 @@ export interface PlanningSearchResult {
 export interface PlanningStatistics {
   region: string;
   lastUpdated: string;
-  landUse: Record<ZoneClassification["category"], {
-    area: number;      // hectares
-    percentage: number; // of total area
-    zones: number;     // number of zones
-  }>;
+  landUse: Record<
+    ZoneClassification["category"],
+    {
+      area: number; // hectares
+      percentage: number; // of total area
+      zones: number; // number of zones
+    }
+  >;
   development: {
     totalProjects: number;
     activeProjects: number;

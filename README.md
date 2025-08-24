@@ -15,31 +15,36 @@ Plan ForPublic.id is a comprehensive transparency platform providing access to I
 ## 🌟 Features
 
 ### 🗺️ Interactive Planning Maps
+
 - **Zoning maps** with color-coded land use classifications
 - **Master plan overlays** with development phases
-- **3D building height restrictions** visualization  
+- **3D building height restrictions** visualization
 - **Infrastructure plan integration** (roads, utilities)
 - **Real-time map interaction** with detailed zone information
 
 ### 📋 Planning Document Library
+
 - **Searchable repository** of planning documents
 - **Advanced PDF viewer** with zoom, rotation, bookmarks
 - **Multi-language document support** (Indonesian/English)
 - **Document download & sharing** functionality
 
 ### 🔍 Planning Information Search
+
 - **Search by location**, land use type, or keyword
 - **Advanced filtering** by plan type, date, status
 - **Geographic search** (click map → get plan info)
 - **Development project tracking**
 
 ### 📊 Development Analytics
+
 - **Land use distribution** analysis
 - **Development density mapping**
 - **Infrastructure capacity** analysis
 - **Environmental impact** visualization
 
 ### 👥 Public Participation Tools
+
 - **Online public consultation** platform
 - **Comment & feedback submission** on plans
 - **Community input visualization**
@@ -87,9 +92,11 @@ plan/
 ## 🛠️ Development
 
 ### Prerequisites
+
 - [Bun](https://bun.sh/) (recommended) or Node.js 18+
 
 ### Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/forpublic-id/plan.git
@@ -103,6 +110,7 @@ bun run dev
 ```
 
 ### Available Scripts
+
 ```bash
 bun run dev          # Start development server
 bun run build        # Production build
@@ -115,19 +123,21 @@ bun run format       # Format code with Prettier
 ## 🗃️ Data Structure
 
 ### Spatial Data (GeoJSON)
+
 ```typescript
 interface PlanningGeoJSON {
   type: "FeatureCollection";
   metadata: PlanningMetadata;
   features: Array<{
     properties: {
-      zone: string;           // Zone code (R1, K2, etc.)
-      landUse: string;        // Current/planned land use
-      area: number;           // Area in hectares
-      regulations: {          // Building regulations
-        far: number;          // Floor Area Ratio
+      zone: string; // Zone code (R1, K2, etc.)
+      landUse: string; // Current/planned land use
+      area: number; // Area in hectares
+      regulations: {
+        // Building regulations
+        far: number; // Floor Area Ratio
         height: { max: number }; // Max height in meters
-        coverage: number;      // Building coverage %
+        coverage: number; // Building coverage %
       };
     };
     geometry: Polygon | MultiPolygon;
@@ -136,6 +146,7 @@ interface PlanningGeoJSON {
 ```
 
 ### Planning Documents
+
 ```typescript
 interface PlanningDocument {
   id: string;
@@ -159,6 +170,7 @@ interface PlanningDocument {
 ## 🌍 Internationalization
 
 Full bilingual support (Indonesian/English):
+
 - Dynamic routing: `/id/maps` and `/en/maps`
 - Complete UI translations
 - Localized document content
@@ -167,6 +179,7 @@ Full bilingual support (Indonesian/English):
 ## 🎨 Design System
 
 Following ForPublic.id ecosystem standards:
+
 - **Primary color**: Red (`#dc2626`)
 - **Typography**: Geist Sans font family
 - **Components**: shadcn/ui with custom adaptations
@@ -175,14 +188,16 @@ Following ForPublic.id ecosystem standards:
 ## 📊 Data Sources
 
 All planning data sourced from official Indonesian government agencies:
+
 - **Kementerian ATR/BPN** - Ministry of Agrarian Affairs and Spatial Planning
-- **Bappenas** - National Development Planning Agency  
+- **Bappenas** - National Development Planning Agency
 - **Regional Bappeda** - Regional Development Planning Agencies
 - **Local Government** planning departments
 
 ## 🔧 API Integration
 
 Future API endpoints for external integration:
+
 ```
 GET /api/plans/spatial/:region     # Spatial planning data
 GET /api/plans/zoning/:region      # Zoning maps & regulations
@@ -193,6 +208,7 @@ GET /api/projects                  # Development projects
 ## 📱 Deployment
 
 ### Vercel (Recommended)
+
 ```bash
 # Install Vercel CLI
 npm install -g vercel
@@ -202,6 +218,7 @@ vercel --prod
 ```
 
 ### Environment Variables
+
 ```env
 NEXT_PUBLIC_GA_ID=your_analytics_id
 NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token (optional)
@@ -216,6 +233,7 @@ NEXT_PUBLIC_MAPBOX_TOKEN=your_mapbox_token (optional)
 5. Open a Pull Request
 
 ### Code Standards
+
 - TypeScript strict mode
 - ESLint + Prettier formatting
 - Component-level testing
