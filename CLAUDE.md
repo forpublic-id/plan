@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Plan ForPublic.id is a comprehensive Indonesian development planning transparency platform built with Next.js 15, focusing on spatial planning, zoning maps, and public participation in planning processes. This is part of the ForPublic.id ecosystem dedicated to government transparency and public accountability.
+Plan ForPublic.id is a community-driven, open-source Indonesian development planning transparency platform built with Next.js 15, focusing on spatial planning, zoning maps, and public participation in planning processes. This is part of the ForPublic.id ecosystem - a grassroots initiative dedicated to promoting government transparency and public accountability through open data and civic engagement.
 
 ## Tech Stack & Architecture
 
@@ -330,10 +330,11 @@ GET /api/statistics               // Platform statistics
 
 ### Data Sources
 
-- **Government official**: All data from verified government sources
-- **Attribution required**: Proper crediting of data sources
-- **Update frequency**: Regular synchronization with source systems
-- **Access rights**: Respect for data usage restrictions
+- **Community-sourced data**: Data aggregated from publicly available government sources by volunteers
+- **Attribution required**: Proper crediting of data sources and contributors
+- **Update frequency**: Community-driven updates with verification processes
+- **Open access**: All data made available under open data principles
+- **Disclaimer**: This is NOT an official government platform - data is provided by community volunteers
 
 ### Privacy
 
@@ -357,4 +358,4 @@ GET /api/statistics               // Platform statistics
 - **Real-time updates**: WebSocket-based live data feeds
 - **Community features**: User-generated content and discussions
 
-This platform represents a significant advancement in Indonesian planning transparency, providing comprehensive access to spatial planning information while maintaining the highest standards of data quality and user experience.
+This community-driven platform represents a grassroots effort to advance Indonesian planning transparency, providing open access to spatial planning information while maintaining high standards of data quality and user experience. As an independent, volunteer-run initiative, it aims to bridge the gap between government data and public understanding of development planning processes.

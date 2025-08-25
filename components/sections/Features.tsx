@@ -54,8 +54,8 @@ export function Features() {
       icon: Users,
       title: t("items.publicParticipation.title"),
       description: t("items.publicParticipation.description"),
-      color: "text-red-600",
-      bgColor: "bg-red-50",
+      color: "text-neutral-600",
+      bgColor: "bg-neutral-50",
     },
     {
       icon: Code,

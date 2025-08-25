@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Plan ForPublic.id - Indonesian Planning Transparency",
-    "description": "Comprehensive platform for Indonesian development planning transparency, zoning maps, and public participation in spatial planning.",
+    "description": "Community-driven platform for Indonesian development planning transparency, providing open access to zoning maps and public participation in spatial planning.",
     "keywords": "indonesian planning, spatial planning, zoning maps, development planning, transparency, public participation, RTRW, RDTR"
   },
   "nav": {
@@ -17,8 +17,8 @@
   },
   "home": {
     "hero": {
-      "title": "Indonesian Planning Transparency",
-      "subtitle": "Comprehensive access to spatial plans, development master plans, and interactive zoning maps across Indonesia",
+      "title": "Plan",
+      "subtitle": "Community-driven platform providing open access to spatial plans, development master plans, and interactive zoning maps across Indonesia",
       "cta": {
         "primary": "Explore Maps",
         "secondary": "View Documents"
@@ -26,7 +26,7 @@
     },
     "features": {
       "title": "Key Features",
-      "subtitle": "Centralized platform for transparent development planning and public participation",
+      "subtitle": "Community initiative for transparent development planning and public participation",
       "items": {
         "interactiveMaps": {
           "title": "Interactive Planning Maps",
@@ -73,6 +73,14 @@
           "value": "1,200+",
           "label": "Development Projects"
         }
+      }
+    },
+    "cta": {
+      "title": "Join Indonesia's Community-Driven Planning Transparency Movement",
+      "subtitle": "Community-powered platform to access planning information, participate in public discussions, and contribute to government transparency. Managed by volunteers, not an official government platform.",
+      "buttons": {
+        "learn": "Learn More",
+        "participate": "Start Participating"
       }
     }
   },
@@ -209,7 +217,7 @@
   },
   "about": {
     "title": "About Plan ForPublic.id",
-    "subtitle": "Indonesian development planning transparency platform",
+    "subtitle": "Community-driven planning transparency platform - Managed by volunteers, not an official government platform",
     "mission": "Mission",
     "vision": "Vision",
     "objectives": "Objectives",
@@ -266,7 +274,7 @@
     "none": "None"
   },
   "footer": {
-    "description": "Indonesian development planning transparency platform to enhance public participation in spatial planning.",
+    "description": "Open community initiative for Indonesian development planning transparency. This platform is managed by volunteers and is not an official government platform.",
     "links": {
       "about": "About",
       "contact": "Contact",

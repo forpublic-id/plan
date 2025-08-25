@@ -2,189 +2,89 @@
 
 import React from "react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Github, Twitter, Mail, ExternalLink } from "lucide-react";
 
 export function Footer() {
-  const t = useTranslations("footer");
   const pathname = usePathname();
-
-  // Extract current locale from pathname
   const currentLocale = pathname.startsWith("/en") ? "en" : "id";
-
-  const socialLinks = [
-    {
-      name: t("social.github"),
-      href: "https://github.com/forpublic-id",
-      icon: Github,
-    },
-    {
-      name: t("social.twitter"),
-      href: "https://twitter.com/forpublic_id",
-      icon: Twitter,
-    },
-    {
-      name: t("social.email"),
-      href: "mailto:hello@forpublic.id",
-      icon: Mail,
-    },
-  ];
-
-  const footerLinks = [
-    {
-      name: t("links.about"),
-      href: `/${currentLocale}/about`,
-    },
-    {
-      name: t("links.contact"),
-      href: `/${currentLocale}/contact`,
-    },
-    {
-      name: t("links.privacy"),
-      href: `/${currentLocale}/privacy`,
-    },
-    {
-      name: t("links.terms"),
-      href: `/${currentLocale}/terms`,
-    },
-    {
-      name: t("links.api"),
-      href: `/${currentLocale}/api`,
-    },
-    {
-      name: t("links.developers"),
-      href: `/${currentLocale}/developers`,
-    },
-  ];
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-background">
-      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-4">
-          {/* Brand & Description */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground font-bold">
-                P
-              </div>
-              <span className="font-bold text-lg">Plan ForPublic.id</span>
+    <footer className="bg-neutral-900 text-neutral-100 py-12">
+      <div className="container mx-auto max-w-6xl px-4 md:px-6 lg:px-8">
+        <div className="text-center">
+          {/* Logo and Brand */}
+          <Link
+            href={`/${currentLocale}`}
+            className="inline-flex items-center space-x-2 mb-4 hover:opacity-80 transition-opacity"
+          >
+            <div className="w-6 h-6">
+              <Image
+                src="/logo.svg"
+                alt="ForPublic.id Logo"
+                width={24}
+                height={24}
+                className="w-full h-full"
+              />
             </div>
-            <p className="text-muted-foreground text-sm leading-6 max-w-md">
-              {t("description")}
-            </p>
+            <span className="text-lg font-bold">
+              Plan ForPublic<span className="text-red-600">.id</span>
+            </span>
+          </Link>
 
-            {/* ForPublic.id Ecosystem */}
-            <div className="mt-6">
-              <p className="text-sm font-medium mb-3">
-                {currentLocale === "id"
-                  ? "Ecosystem ForPublic.id"
-                  : "ForPublic.id Ecosystem"}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Link
-                  href="https://forpublic.id"
-                  className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-muted rounded-md hover:bg-muted/80 transition-colors"
-                >
-                  ForPublic.id
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
-                <Link
-                  href="https://salary.forpublic.id"
-                  className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-muted rounded-md hover:bg-muted/80 transition-colors"
-                >
-                  Salary
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
-                <Link
-                  href="https://budget.forpublic.id"
-                  className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-muted rounded-md hover:bg-muted/80 transition-colors"
-                >
-                  Budget
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
-                <Link
-                  href="https://holiday.forpublic.id"
-                  className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-muted rounded-md hover:bg-muted/80 transition-colors"
-                >
-                  Holiday
-                  <ExternalLink className="w-3 h-3" />
-                </Link>
-              </div>
-            </div>
-          </div>
+          {/* Project Description */}
+          <p className="text-neutral-300 mb-6 max-w-2xl mx-auto">
+            {currentLocale === "id"
+              ? "Inisiatif komunitas terbuka untuk transparansi perencanaan pembangunan Indonesia. Platform ini dikelola oleh relawan dan bukan merupakan platform resmi pemerintah."
+              : "Open community initiative for Indonesian development planning transparency. This platform is managed by volunteers and is not an official government platform."}
+          </p>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4">
-              {currentLocale === "id" ? "Tautan Cepat" : "Quick Links"}
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.slice(0, 3).map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
-          <div>
-            <h3 className="text-sm font-semibold mb-4">
-              {currentLocale === "id" ? "Sumber Daya" : "Resources"}
-            </h3>
-            <ul className="space-y-3">
-              {footerLinks.slice(3).map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Bottom Section */}
-        <div className="mt-12 border-t border-border pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
-            {/* Copyright */}
-            <p className="text-sm text-muted-foreground">{t("copyright")}</p>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    <span className="sr-only">{item.name}</span>
-                    <Icon className="h-5 w-5" />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Attribution */}
-          <div className="mt-4 pt-4 border-t border-border">
-            <p className="text-xs text-muted-foreground text-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 text-sm">
+            <Link
+              href={`/${currentLocale}/maps`}
+              className="text-neutral-300 hover:text-neutral-100 transition-colors"
+            >
+              {currentLocale === "id" ? "Peta Interaktif" : "Interactive Maps"}
+            </Link>
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <Link
+              href={`/${currentLocale}/documents`}
+              className="text-neutral-300 hover:text-neutral-100 transition-colors"
+            >
               {currentLocale === "id"
-                ? "Dibuat dengan ❤️ untuk transparansi publik Indonesia"
-                : "Built with ❤️ for Indonesian public transparency"}
+                ? "Dokumen Perencanaan"
+                : "Planning Documents"}
+            </Link>
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <Link
+              href="https://forpublic.id"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 hover:text-neutral-100 transition-colors"
+            >
+              {currentLocale === "id" ? "Website Utama" : "Main Website"}
+            </Link>
+            <span className="hidden sm:inline text-neutral-600">•</span>
+            <Link
+              href="https://forpublic.id/contact"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-neutral-300 hover:text-neutral-100 transition-colors"
+            >
+              {currentLocale === "id" ? "Kontak" : "Contact"}
+            </Link>
+          </div>
+
+          {/* Copyright */}
+          <div className="pt-8 border-t border-neutral-800">
+            <p className="text-neutral-400 text-sm">
+              © {currentYear} ForPublic
+              <span className="text-red-600">.id</span>.{" "}
+              {currentLocale === "id"
+                ? "Dibuat dengan ❤️ untuk kebaikan publik. Inisiatif komunitas terbuka, bukan platform resmi pemerintah."
+                : "Made with ❤️ for public good. Open community initiative, not an official government platform."}
             </p>
           </div>
         </div>

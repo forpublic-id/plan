@@ -1,65 +1,27 @@
-import type { Metadata } from "next";
 import { GeistSans, GeistMono } from "geist/font";
 import "./globals.css";
 
-export const metadata: Metadata = {
-  title: {
-    template: "%s | Plan ForPublic.id",
-    default: "Plan ForPublic.id - Indonesian Planning Transparency",
-  },
-  description:
-    "Comprehensive platform for Indonesian development planning transparency, zoning maps, and public participation in spatial planning.",
-  keywords: [
-    "Indonesian planning",
-    "spatial planning",
-    "zoning maps",
-    "development planning",
-    "transparency",
-    "public participation",
-    "RTRW",
-    "RDTR",
-    "planning documents",
-  ],
-  authors: [{ name: "ForPublic.id" }],
-  creator: "ForPublic.id",
-  publisher: "ForPublic.id",
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    alternateLocale: "en_US",
-    url: "https://plan.forpublic.id",
-    siteName: "Plan ForPublic.id",
-    title: "Plan ForPublic.id - Indonesian Planning Transparency",
-    description:
-      "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Plan ForPublic.id - Indonesian Planning Transparency",
-    description:
-      "Access Indonesian development plans, zoning maps, and participate in spatial planning transparency.",
-  },
+export const metadata = {
+  metadataBase: new URL("https://plan.forpublic.id"),
 };
 
+// Minimal root layout to avoid metadata conflicts
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id" suppressHydrationWarning>
-      <head />
+    <html suppressHydrationWarning>
+      <head>
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        {/* Additional Meta Tags */}
+        <meta name="theme-color" content="#343434" />
+        <meta name="msapplication-TileColor" content="#343434" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="format-detection" content="telephone=no" />
+      </head>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}
         suppressHydrationWarning

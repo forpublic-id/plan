@@ -8,3 +8,4 @@ export {
   CardHeader,
   CardTitle,
 } from "./Card";
+export { LanguageSwitcher } from "./LanguageSwitcher";

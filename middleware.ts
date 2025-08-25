@@ -1,17 +1,32 @@
 import createMiddleware from "next-intl/middleware";
+import { NextRequest, NextResponse } from "next/server";
 
-export default createMiddleware({
-  // A list of all locales that are supported
+const intlMiddleware = createMiddleware({
   locales: ["id", "en"],
-
-  // Used when no locale matches
   defaultLocale: "id",
-
-  // Enable automatic locale detection
-  localeDetection: true,
+  localePrefix: "always",
+  localeDetection: false, // Force default locale instead of browser detection
 });
 
+export default function middleware(request: NextRequest) {
+  const response = intlMiddleware(request);
+
+  // If user is accessing root and gets redirected, ensure we set the right cookie
+  if (request.nextUrl.pathname === "/" && response.status === 307) {
+    response.cookies.set("NEXT_LOCALE", "id", { path: "/", sameSite: "lax" });
+  }
+
+  return response;
+}
+
 export const config = {
-  // Match only internationalized pathnames
-  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
+  matcher: [
+    // Enable a redirect to a matching locale at the root
+    "/",
+    // Set a cookie to remember the previous locale for
+    // all requests that have a locale prefix
+    "/(id|en)/:path*",
+    // Enable redirects that add missing locales
+    "/((?!_next|_vercel|.*\\..*).*)",
+  ],
 };

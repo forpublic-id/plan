@@ -1,201 +1,135 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import { useTranslations } from "next-intl";
-import { usePathname, useRouter } from "next/navigation";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
+import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 import { Badge } from "@/components/ui/Badge";
-import { cn } from "@/lib/utils";
-import {
-  Menu,
-  X,
-  Globe,
-  Map,
-  FileText,
-  Building2,
-  Users,
-  Info,
-  BookOpen,
-} from "lucide-react";
+
+const navigation = [
+  { key: "maps", href: "/maps" },
+  { key: "documents", href: "/documents" },
+  { key: "regions", href: "/regions" },
+  { key: "projects", href: "/projects" },
+  { key: "participate", href: "/participate" },
+  { key: "about", href: "/about" },
+  { key: "glossary", href: "/glossary" },
+];
 
 export function Header() {
   const t = useTranslations("nav");
+  const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Extract current locale from pathname
-  const currentLocale = pathname.startsWith("/en") ? "en" : "id";
-  const pathWithoutLocale = pathname.replace(/^\/(id|en)/, "");
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
 
-  const navigation = [
-    {
-      name: t("home"),
-      href: `/${currentLocale}`,
-      icon: Building2,
-      current: pathWithoutLocale === "",
-    },
-    {
-      name: t("maps"),
-      href: `/${currentLocale}/maps`,
-      icon: Map,
-      current: pathWithoutLocale.startsWith("/maps"),
-    },
-    {
-      name: t("documents"),
-      href: `/${currentLocale}/documents`,
-      icon: FileText,
-      current: pathWithoutLocale.startsWith("/documents"),
-    },
-    {
-      name: t("regions"),
-      href: `/${currentLocale}/regions`,
-      icon: Globe,
-      current: pathWithoutLocale.startsWith("/regions"),
-    },
-    {
-      name: t("projects"),
-      href: `/${currentLocale}/projects`,
-      icon: Building2,
-      current: pathWithoutLocale.startsWith("/projects"),
-    },
-    {
-      name: t("participate"),
-      href: `/${currentLocale}/participate`,
-      icon: Users,
-      current: pathWithoutLocale.startsWith("/participate"),
-    },
-    {
-      name: t("about"),
-      href: `/${currentLocale}/about`,
-      icon: Info,
-      current: pathWithoutLocale.startsWith("/about"),
-    },
-    {
-      name: t("glossary"),
-      href: `/${currentLocale}/glossary`,
-      icon: BookOpen,
-      current: pathWithoutLocale.startsWith("/glossary"),
-    },
-  ];
-
-  const switchLocale = () => {
-    const newLocale = currentLocale === "id" ? "en" : "id";
-    const newPath = `/${newLocale}${pathWithoutLocale}`;
-    router.push(newPath);
+  const isActivePage = (path: string) => {
+    return pathname.includes(path);
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 py-4">
+        <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
-            <Link
-              href={`/${currentLocale}`}
-              className="flex items-center space-x-2"
+          <Link href={`/${locale}`} className="flex items-center space-x-3">
+            <Image
+              src="/logo.svg"
+              alt="ForPublic.id Logo"
+              width={32}
+              height={32}
+              className="h-8 w-8"
+            />
+            <div className="flex flex-col min-w-0">
+              <span className="text-xl font-bold text-foreground whitespace-nowrap">
+                Plan <span className="text-primary">ForPublic</span>
+              </span>
+              <span className="text-xs text-muted-foreground font-medium whitespace-nowrap">
+                by <span className="text-foreground">ForPublic</span>
+                <span className="text-red-600">.id</span>
+              </span>
+            </div>
+            <Badge
+              variant="secondary"
+              className="hidden text-xs sm:inline-flex"
             >
-              <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-primary-foreground font-bold">
-                P
-              </div>
-              <div className="hidden font-bold sm:block">Plan ForPublic.id</div>
-              <Badge
-                variant="secondary"
-                className="hidden text-xs sm:inline-flex"
-              >
-                Beta
-              </Badge>
-            </Link>
-          </div>
+              Beta
+            </Badge>
+          </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex md:space-x-1">
+          <nav className="hidden md:flex items-center space-x-6">
             {navigation.map((item) => {
-              const Icon = item.icon;
+              const isActive = isActivePage(item.href);
               return (
                 <Link
-                  key={item.name}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center space-x-1 rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                    item.current
-                      ? "bg-primary text-primary-foreground"
-                      : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-                  )}
+                  key={item.key}
+                  href={`/${locale}${item.href}`}
+                  className={`transition-colors hover:text-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-600 focus:ring-offset-2 rounded-sm px-1 py-1 ${
+                    isActive ? "text-neutral-700 font-medium" : "text-gray-600"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
                 >
-                  <Icon className="h-4 w-4" />
-                  <span>{item.name}</span>
+                  {t(item.key as any)}
                 </Link>
               );
             })}
           </nav>
 
-          {/* Language Switcher & Mobile Menu */}
-          <div className="flex items-center space-x-2">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={switchLocale}
-              className="hidden sm:flex items-center space-x-1"
-            >
-              <Globe className="h-4 w-4" />
-              <span className="uppercase">{currentLocale}</span>
-            </Button>
-
-            {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className="h-6 w-6" />
-              ) : (
-                <Menu className="h-6 w-6" />
-              )}
-            </Button>
+          {/* Desktop Language Switcher */}
+          <div className="hidden md:flex items-center space-x-4">
+            <LanguageSwitcher currentLocale={locale} />
           </div>
+
+          {/* Mobile Menu Button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={toggleMobileMenu}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="space-y-1 pb-3 pt-2">
+        {mobileMenuOpen && (
+          <div className="md:hidden border-t py-4 px-4 md:px-6 lg:px-8">
+            <nav className="space-y-4">
               {navigation.map((item) => {
-                const Icon = item.icon;
+                const isActive = isActivePage(item.href);
                 return (
                   <Link
-                    key={item.name}
-                    href={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={cn(
-                      "flex items-center space-x-2 rounded-md px-3 py-2 text-base font-medium transition-colors",
-                      item.current
-                        ? "bg-primary text-primary-foreground"
-                        : "text-muted-foreground hover:bg-accent hover:text-accent-foreground",
-                    )}
+                    key={item.key}
+                    href={`/${locale}${item.href}`}
+                    className={`block text-sm font-medium transition-colors py-2 ${
+                      isActive
+                        ? "text-neutral-700 font-medium"
+                        : "text-gray-600 hover:text-neutral-700"
+                    }`}
+                    onClick={() => setMobileMenuOpen(false)}
+                    aria-current={isActive ? "page" : undefined}
                   >
-                    <Icon className="h-5 w-5" />
-                    <span>{item.name}</span>
+                    {t(item.key as any)}
                   </Link>
                 );
               })}
+            </nav>
 
-              {/* Mobile Language Switcher */}
-              <button
-                onClick={() => {
-                  switchLocale();
-                  setIsMobileMenuOpen(false);
-                }}
-                className="flex w-full items-center space-x-2 rounded-md px-3 py-2 text-base font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
-              >
-                <Globe className="h-5 w-5" />
-                <span>
-                  {t("languageSwitcher")} ({currentLocale.toUpperCase()})
-                </span>
-              </button>
+            <div className="flex items-center justify-between mt-6 pt-4 border-t">
+              <span className="text-sm text-muted-foreground">Language:</span>
+              <LanguageSwitcher currentLocale={locale} />
             </div>
           </div>
         )}

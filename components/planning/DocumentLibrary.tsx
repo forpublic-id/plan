@@ -132,7 +132,7 @@ export function DocumentLibrary({
 
   const getTypeColor = (type: string) => {
     const colors: Record<string, string> = {
-      regulation: "text-red-600 bg-red-50 border-red-200",
+      regulation: "text-neutral-600 bg-neutral-50 border-neutral-200",
       map: "text-green-600 bg-green-50 border-green-200",
       report: "text-blue-600 bg-blue-50 border-blue-200",
       study: "text-purple-600 bg-purple-50 border-purple-200",

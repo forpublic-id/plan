@@ -1,12 +1,12 @@
 {
   "meta": {
     "title": "Plan ForPublic.id - Transparansi Perencanaan Indonesia",
-    "description": "Platform komprehensif untuk transparansi perencanaan pembangunan Indonesia, peta zonasi, dan partisipasi publik dalam perencanaan tata ruang.",
+    "description": "Platform transparansi perencanaan pembangunan Indonesia yang dikelola komunitas, menyediakan akses terbuka terhadap peta zonasi dan partisipasi publik dalam perencanaan tata ruang.",
     "keywords": "perencanaan indonesia, tata ruang, peta zonasi, perencanaan pembangunan, transparansi, partisipasi publik, RTRW, RDTR"
   },
   "nav": {
     "home": "Beranda",
-    "maps": "Peta Interaktif",
+    "maps": "Peta",
     "documents": "Dokumen",
     "regions": "Wilayah",
     "projects": "Proyek",
@@ -17,8 +17,8 @@
   },
   "home": {
     "hero": {
-      "title": "Transparansi Perencanaan Indonesia",
-      "subtitle": "Akses komprehensif untuk rencana tata ruang, master plan pembangunan, dan peta zonasi interaktif di seluruh Indonesia",
+      "title": "Plan",
+      "subtitle": "Platform berbasis komunitas yang menyediakan akses terbuka terhadap rencana tata ruang, master plan pembangunan, dan peta zonasi interaktif di seluruh Indonesia",
       "cta": {
         "primary": "Jelajahi Peta",
         "secondary": "Lihat Dokumen"
@@ -26,7 +26,7 @@
     },
     "features": {
       "title": "Fitur Utama",
-      "subtitle": "Platform terpusat untuk perencanaan pembangunan transparan dan partisipasi publik",
+      "subtitle": "Inisiatif komunitas untuk transparansi perencanaan pembangunan dan partisipasi publik",
       "items": {
         "interactiveMaps": {
           "title": "Peta Perencanaan Interaktif",
@@ -73,6 +73,14 @@
           "value": "1,200+",
           "label": "Proyek Pembangunan"
         }
+      }
+    },
+    "cta": {
+      "title": "Bergabunglah dalam Gerakan Transparansi Perencanaan Indonesia",
+      "subtitle": "Platform berbasis komunitas untuk mengakses informasi perencanaan, berpartisipasi dalam diskusi publik, dan berkontribusi dalam transparansi pemerintahan. Dikelola oleh relawan, bukan platform resmi pemerintah.",
+      "buttons": {
+        "learn": "Pelajari Lebih Lanjut",
+        "participate": "Mulai Berpartisipasi"
       }
     }
   },
@@ -209,7 +217,7 @@
   },
   "about": {
     "title": "Tentang Plan ForPublic.id",
-    "subtitle": "Platform transparansi perencanaan pembangunan Indonesia",
+    "subtitle": "Platform transparansi perencanaan berbasis komunitas - Dikelola relawan, bukan platform resmi pemerintah",
     "mission": "Misi",
     "vision": "Visi",
     "objectives": "Tujuan",
@@ -266,7 +274,7 @@
     "none": "Tidak ada"
   },
   "footer": {
-    "description": "Platform transparansi perencanaan pembangunan Indonesia untuk meningkatkan partisipasi publik dalam perencanaan tata ruang.",
+    "description": "Inisiatif komunitas terbuka untuk transparansi perencanaan pembangunan Indonesia. Platform ini dikelola oleh relawan dan bukan merupakan platform resmi pemerintah.",
     "links": {
       "about": "Tentang",
       "contact": "Kontak",
