@@ -237,6 +237,10 @@
       "infrastructure": "Infrastruktur"
     }
   },
+  "analytics": {
+    "title": "Analitik Pembangunan",
+    "subtitle": "Dashboard komprehensif untuk menganalisis tren pembangunan di Indonesia"
+  },
   "common": {
     "loading": "Memuat...",
     "error": "Terjadi kesalahan",

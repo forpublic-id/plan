@@ -237,6 +237,10 @@
       "infrastructure": "Infrastructure"
     }
   },
+  "analytics": {
+    "title": "Development Analytics",
+    "subtitle": "Comprehensive dashboard to analyze development trends in Indonesia"
+  },
   "common": {
     "loading": "Loading...",
     "error": "An error occurred",

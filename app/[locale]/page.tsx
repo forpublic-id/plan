@@ -36,8 +36,7 @@ export default async function HomePage({
               : "Community-Driven Planning Transparency Platform"}
           </div>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            {t("hero.title")}{" "}
-            <span className="text-black">ForPublic</span>
+            {t("hero.title")} <span className="text-black">ForPublic</span>
             <span className="text-red-600">.id</span>
           </h1>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto">

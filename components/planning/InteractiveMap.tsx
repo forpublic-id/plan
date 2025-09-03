@@ -9,7 +9,9 @@ const DynamicMap = dynamic(() => import("./LeafletMap"), {
   loading: () => (
     <div className="w-full h-full bg-muted flex items-center justify-center">
       <div className="text-center">
-        <div className="animate-pulse text-muted-foreground">Loading map...</div>
+        <div className="animate-pulse text-muted-foreground">
+          Loading map...
+        </div>
       </div>
     </div>
   ),
